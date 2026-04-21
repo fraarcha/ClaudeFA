@@ -23,10 +23,10 @@ CV_FR = {
     "name": "Francis Archambault",
     "title": "Analyste principal senior &\nArchitecte de solutions\nBusiness Central",
     "contact": [
-        ("✉", "f.archambault@gmail.com"),
-        ("☎", "514-928-3314"),
-        ("⌂", "200 rue Brodeur\nBeloeil, QC J3G 2R9"),
-        ("in", "linkedin.com/in/\nfrancisarchambault"),
+        ("Email", "f.archambault@gmail.com"),
+        ("Tel", "514-928-3314"),
+        ("Adr", "200 rue Brodeur\nBeloeil, QC J3G 2R9"),
+        ("Web", "linkedin.com/in/\nfrancisarchambault"),
     ],
     "skills_label": "Compétences",
     "skills": [
@@ -115,10 +115,10 @@ CV_EN = {
     "name": "Francis Archambault",
     "title": "Senior Principal Analyst &\nBusiness Central\nSolutions Architect",
     "contact": [
-        ("✉", "f.archambault@gmail.com"),
-        ("☎", "514-928-3314"),
-        ("⌂", "200 Brodeur St.\nBeloeil, QC J3G 2R9"),
-        ("in", "linkedin.com/in/\nfrancisarchambault"),
+        ("Email", "f.archambault@gmail.com"),
+        ("Tel", "514-928-3314"),
+        ("Adr", "200 Brodeur St.\nBeloeil, QC J3G 2R9"),
+        ("Web", "linkedin.com/in/\nfrancisarchambault"),
     ],
     "skills_label": "Core Skills",
     "skills": [
