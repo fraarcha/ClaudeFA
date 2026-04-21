@@ -583,6 +583,281 @@ def generate(data, filename):
     CVRenderer(data, filename).render()
 
 
+# ─── ERA-targeted variants ───────────────────────────────────────────────────
+
+CV_FR_ERA = {
+    "name": "Francis Archambault",
+    "title": "Architecte de solutions\nDynamics 365 Business Central\nERP & Transformation numérique",
+    "contact": [
+        ("Email", "f.archambault@gmail.com"),
+        ("Tel", "514-928-3314"),
+        ("Adr", "200 rue Brodeur\nBeloeil, QC J3G 2R9"),
+        ("Web", "linkedin.com/in/\nfrancisarchambault"),
+    ],
+    "skills_label": "Compétences",
+    "skills": [
+        ("Dynamics 365 Business Central", 5),
+        ("Architecture fonctionnelle ERP", 5),
+        ("Ateliers de découverte", 4),
+        ("Gestion de projets multi-sites", 5),
+        ("Processus d'affaires (BPMN)", 4),
+        ("Warehouse Insight / WMS", 4),
+        ("Intégrations API REST / EDI", 4),
+        ("IA appliquée aux processus", 4),
+        ("Automatisation no-code", 4),
+        ("Intégration eCommerce", 4),
+        ("Leadership & coaching TI", 5),
+        ("SAP Business One", 3),
+    ],
+    "lang_label": "Langues",
+    "languages": [
+        ("Français", 5),
+        ("Anglais", 4),
+    ],
+    "interests_label": "Intérêts",
+    "interests": "Balle molle · Ski · Conditionnement physique · Voyages & découvertes culturelles",
+    "summary_label": "Résumé professionnel",
+    "summary": (
+        "Architecte de solutions Dynamics 365 Business Central avec plus de 10 ans d'expérience en "
+        "transformation numérique ERP/WMS multi-sites. Expert en animation d'ateliers de découverte, "
+        "conception d'architectures fonctionnelles alignées aux processus d'affaires et accompagnement "
+        "des parties prenantes. Reconnu pour piloter des déploiements complexes (5 sites), réduire les "
+        "coûts de consultation de 90% et vulgariser les enjeux technologiques à tous les niveaux. "
+        "Bilingue (FR/EN), certifié ITIL."
+    ),
+    "experience_label": "Expériences professionnelles",
+    "experiences": [
+        {
+            "title": "Architecte de solutions Dynamics 365 Business Central",
+            "company": "Groupe AFFI",
+            "period": "2017 – présent",
+            "bullets": [
+                ("Pilotage du cycle de vie ERP complet sur ", "5 sites", " : ateliers de découverte, conception de l'architecture fonctionnelle, mise en production"),
+                ("Conception et déploiement de Dynamics 365 Business Central et Warehouse Insight, alignés aux processus d'affaires, contraintes budgétaires et délais"),
+                ("Automatisation des processus de production réduisant les tâches manuelles de plus de ", "80%", ""),
+                ("Réduction des coûts de consultation externe de ", "90%", " par l'internalisation de l'expertise fonctionnelle"),
+                ("Intégration et automatisation des flux avec clients et fournisseurs via EDI, API REST et Make.com"),
+                ("Conception et supervision de la plateforme d'intégration eCommerce",),
+                ("Formation et transfert de connaissances à l'équipe TI : spécifications fonctionnelles, bonnes pratiques d'architecture et livrables",),
+            ],
+        },
+        {
+            "title": "Coordonnateur WMS",
+            "company": "Groupe AFFI",
+            "period": "2016 – 2017",
+            "bullets": [
+                ("Analyse des besoins, conception des scénarios d'implantation et pilotage du déploiement WMS HighJump",),
+                ("Configuration, tests et validation des solutions avec les parties prenantes opérationnelles",),
+                ("Soutien aux opérations quotidiennes et résolution des écarts entre besoins et solution livrée",),
+            ],
+        },
+        {
+            "title": "Contremaître de site",
+            "company": "Groupe AFFI",
+            "period": "2015",
+            "bullets": [
+                ("Supervision d'une équipe de superviseurs et employés",),
+                ("Gestion de la production, distribution et entrepôt",),
+                ("Optimisation des opérations et relation client",),
+            ],
+        },
+    ],
+    "prev_exp_label": "Expériences antérieures",
+    "prev_experiences": [
+        ("Groupe Novatec", "2011", "Création de fiches de travail et SST pour améliorer les procédures et la sécurité."),
+        ("Pratt & Whitney", "2012", "Gestion du système d'entrepôt et projet de réallocation des items peu utilisés vers un 3PL."),
+        ("IILM", "2013", "Visites d'entreprises pour initier des projets de transformation technologique et recherche de subventions."),
+        ("Projet CUSM", "2014", "Développement d'un système d'optimisation des routes de livraison pour les dons d'organes."),
+        ("24h de l'innovation – Pérou", "2014", "Développement de solutions innovantes en équipe internationale."),
+    ],
+    "edu_label": "Formation et certifications",
+    "education": [
+        ("Génie des opérations et logistique", "ÉTS", "2010 – 2014"),
+        ("Gestion de commerce", "Collège Édouard-Montpetit", "2007 – 2010"),
+        ("ITIL Foundation", "", "2022"),
+    ],
+}
+
+CV_EN_ERA = {
+    "name": "Francis Archambault",
+    "title": "Dynamics 365 Business Central\nSolutions Architect\nERP & Digital Transformation",
+    "contact": [
+        ("Email", "f.archambault@gmail.com"),
+        ("Tel", "514-928-3314"),
+        ("Adr", "200 Brodeur St.\nBeloeil, QC J3G 2R9"),
+        ("Web", "linkedin.com/in/\nfrancisarchambault"),
+    ],
+    "skills_label": "Core Skills",
+    "skills": [
+        ("Dynamics 365 Business Central", 5),
+        ("Functional ERP Architecture", 5),
+        ("Discovery Workshops", 4),
+        ("Multi-site Project Management", 5),
+        ("Business Process Analysis", 4),
+        ("Warehouse Insight / WMS", 4),
+        ("API REST / EDI Integrations", 4),
+        ("Applied AI in Business Processes", 4),
+        ("No-code Automation", 4),
+        ("eCommerce Integration", 4),
+        ("Leadership & IT Coaching", 5),
+        ("SAP Business One", 3),
+    ],
+    "lang_label": "Languages",
+    "languages": [
+        ("French", 5),
+        ("English", 5),
+    ],
+    "interests_label": "Interests",
+    "interests": "Softball · Skiing · Fitness · Travel & Cultural Exploration",
+    "summary_label": "Professional Summary",
+    "summary": (
+        "Dynamics 365 Business Central solutions architect with 10+ years of experience in multi-site "
+        "ERP/WMS digital transformation. Expert in leading discovery workshops, designing functional "
+        "architectures aligned to business processes, and guiding stakeholders throughout the full "
+        "ERP lifecycle. Recognized for driving complex deployments across 5 sites, cutting external "
+        "consulting costs by 90%, and simplifying technical concepts for all audiences. "
+        "Bilingual (FR/EN), ITIL certified."
+    ),
+    "experience_label": "Professional Experience",
+    "experiences": [
+        {
+            "title": "Dynamics 365 Business Central Solutions Architect",
+            "company": "Groupe AFFI",
+            "period": "2017 – Present",
+            "bullets": [
+                ("Owned the full ERP lifecycle across ", "5 sites", ": discovery workshops, functional architecture design, and go-live delivery"),
+                ("Designed and deployed Dynamics 365 Business Central and Warehouse Insight, aligned to business processes, budget constraints and timelines",),
+                ("Automated production workflows, reducing manual task time by over ", "80%", ""),
+                ("Cut external consulting costs by ", "90%", " by internalizing functional architecture expertise"),
+                ("Integrated and automated client and supplier workflows via EDI, REST APIs, and Make.com",),
+                ("Designed and supervised the eCommerce integration platform",),
+                ("Transferred knowledge to the IT team through functional spec coaching, architecture reviews, and structured project delivery",),
+            ],
+        },
+        {
+            "title": "WMS Coordinator",
+            "company": "Groupe AFFI",
+            "period": "2016 – 2017",
+            "bullets": [
+                ("Analyzed requirements, designed implementation scenarios, and led the HighJump WMS deployment",),
+                ("Configured, tested, and validated the solution with operational stakeholders",),
+                ("Supported daily operations and resolved gaps between requirements and delivered solution",),
+            ],
+        },
+        {
+            "title": "Site Supervisor",
+            "company": "Groupe AFFI",
+            "period": "2015",
+            "bullets": [
+                ("Supervised a team of supervisors and warehouse staff",),
+                ("Managed production, distribution, and warehousing operations",),
+                ("Optimized operations and maintained client relationships",),
+            ],
+        },
+    ],
+    "prev_exp_label": "Earlier Experience",
+    "prev_experiences": [
+        ("Groupe Novatec", "2011", "Created work order sheets and OHS procedures to improve safety and process efficiency."),
+        ("Pratt & Whitney", "2012", "Managed warehouse management system and led a slow-moving inventory reallocation project to a 3PL."),
+        ("IILM", "2013", "Conducted company visits to initiate technology transformation projects and secured grant funding."),
+        ("CUSM Project", "2014", "Developed a route optimization system for organ donation and laboratory sample delivery."),
+        ("24h Innovation – Peru", "2014", "Developed innovative solutions as part of an international team competition."),
+    ],
+    "edu_label": "Education & Certifications",
+    "education": [
+        ("Operations Engineering & Logistics", "ÉTS", "2010 – 2014"),
+        ("Business Management", "Collège Édouard-Montpetit", "2007 – 2010"),
+        ("ITIL Foundation", "", "2022"),
+    ],
+}
+
+
+MATCH_REPORT = """
+=============================================================
+RAPPORT DE CORRESPONDANCE — Groupe conseil ERA
+Poste : Architecte Solutions ERP – Dynamics 365 Business Central
+Candidat : Francis Archambault
+=============================================================
+
+SCORE ESTIMÉ DE COMPATIBILITÉ : 88 / 100
+
+─────────────────────────────────────────────────────────────
+FORCES MAJEURES (correspondances directes)
+─────────────────────────────────────────────────────────────
+✓ Dynamics 365 Business Central — expertise centrale obligatoire, couvert à 100%
+  → Ressource principale architecture + déploiement D365 BC chez Groupe AFFI (7 ans)
+
+✓ Déploiements ERP multi-sites
+  → 5 sites en simultané, cycle de vie complet (analyse → production)
+
+✓ Intégrations & processus d'affaires
+  → EDI, API REST, Make.com, eCommerce, BPMN, Warehouse Insight
+
+✓ Bilinguisme FR/EN
+  → Profil nativement bilingue, expérience dans les deux langues
+
+✓ Coaching & transfert de connaissances
+  → Coaching équipe TI, rédaction de specs fonctionnelles, bonnes pratiques
+
+✓ Technologies émergentes (IA, no-code)
+  → Make.com, Azure Blob, automatisation no-code/low-code, IA appliquée
+
+✓ Réduction mesurable des coûts
+  → 80% réduction tâches manuelles, 90% réduction coûts consultation externe
+
+─────────────────────────────────────────────────────────────
+LACUNES / POINTS À SURVEILLER
+─────────────────────────────────────────────────────────────
+△ Expérience de prévente formelle
+  → Parcours 100% interne (ressource côté client, pas côté firme-conseil)
+  → Mitigation : reframer les ateliers de découverte et la coordination
+     multi-parties comme activités équivalentes
+
+△ Rôle de consultant externe / démos client
+  → Pas d'expérience directe de présentation commerciale ou d'offres structurées
+  → Mitigation : l'architecture de solutions pour 5 sites démontre la capacité
+     à concevoir des solutions pour des contextes variés
+
+△ Certification Dynamics 365 BC (MB-800 ou similaire)
+  → Non mentionnée dans le profil
+  → Recommandation : l'ajouter si elle existe, sinon l'obtenir rapidement
+
+─────────────────────────────────────────────────────────────
+MOTS-CLÉS ATS INTÉGRÉS DANS LE CV ADAPTÉ
+─────────────────────────────────────────────────────────────
+  Dynamics 365 Business Central / D365 BC
+  Architecture fonctionnelle ERP
+  Ateliers de découverte
+  Cycle de vie ERP
+  Processus d'affaires
+  Parties prenantes
+  Transformation numérique
+  Intégration eCommerce
+  Intelligence artificielle appliquée
+  Bilinguisme / Bilingue (FR/EN)
+  ITIL
+  Transfert de connaissances
+  Spécifications fonctionnelles
+
+─────────────────────────────────────────────────────────────
+RECOMMANDATIONS SUPPLÉMENTAIRES
+─────────────────────────────────────────────────────────────
+1. Mettre à jour le profil LinkedIn avec les mots-clés ci-dessus
+2. Préparer 2-3 exemples concrets d'«ateliers de découverte» informels
+   menés chez Groupe AFFI (ex. sessions de définition des besoins par site)
+3. Mentionner la certification ITIL en introduction lors d'un entretien
+4. Si disponible, obtenir une certification officielle MB-800
+   (Microsoft Certified: Dynamics 365 Business Central Functional Consultant)
+=============================================================
+"""
+
+
 if __name__ == "__main__":
     generate(CV_FR, "cv_fr.pdf")
     generate(CV_EN, "cv_en.pdf")
+    generate(CV_FR_ERA, "cv_fr_era.pdf")
+    generate(CV_EN_ERA, "cv_en_era.pdf")
+    with open("match_report_era.txt", "w", encoding="utf-8") as f:
+        f.write(MATCH_REPORT)
+    print("Generated: match_report_era.txt")
+    print(MATCH_REPORT)

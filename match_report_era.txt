@@ -1,0 +1,77 @@
+
+=============================================================
+RAPPORT DE CORRESPONDANCE — Groupe conseil ERA
+Poste : Architecte Solutions ERP – Dynamics 365 Business Central
+Candidat : Francis Archambault
+=============================================================
+
+SCORE ESTIMÉ DE COMPATIBILITÉ : 88 / 100
+
+─────────────────────────────────────────────────────────────
+FORCES MAJEURES (correspondances directes)
+─────────────────────────────────────────────────────────────
+✓ Dynamics 365 Business Central — expertise centrale obligatoire, couvert à 100%
+  → Ressource principale architecture + déploiement D365 BC chez Groupe AFFI (7 ans)
+
+✓ Déploiements ERP multi-sites
+  → 5 sites en simultané, cycle de vie complet (analyse → production)
+
+✓ Intégrations & processus d'affaires
+  → EDI, API REST, Make.com, eCommerce, BPMN, Warehouse Insight
+
+✓ Bilinguisme FR/EN
+  → Profil nativement bilingue, expérience dans les deux langues
+
+✓ Coaching & transfert de connaissances
+  → Coaching équipe TI, rédaction de specs fonctionnelles, bonnes pratiques
+
+✓ Technologies émergentes (IA, no-code)
+  → Make.com, Azure Blob, automatisation no-code/low-code, IA appliquée
+
+✓ Réduction mesurable des coûts
+  → 80% réduction tâches manuelles, 90% réduction coûts consultation externe
+
+─────────────────────────────────────────────────────────────
+LACUNES / POINTS À SURVEILLER
+─────────────────────────────────────────────────────────────
+△ Expérience de prévente formelle
+  → Parcours 100% interne (ressource côté client, pas côté firme-conseil)
+  → Mitigation : reframer les ateliers de découverte et la coordination
+     multi-parties comme activités équivalentes
+
+△ Rôle de consultant externe / démos client
+  → Pas d'expérience directe de présentation commerciale ou d'offres structurées
+  → Mitigation : l'architecture de solutions pour 5 sites démontre la capacité
+     à concevoir des solutions pour des contextes variés
+
+△ Certification Dynamics 365 BC (MB-800 ou similaire)
+  → Non mentionnée dans le profil
+  → Recommandation : l'ajouter si elle existe, sinon l'obtenir rapidement
+
+─────────────────────────────────────────────────────────────
+MOTS-CLÉS ATS INTÉGRÉS DANS LE CV ADAPTÉ
+─────────────────────────────────────────────────────────────
+  Dynamics 365 Business Central / D365 BC
+  Architecture fonctionnelle ERP
+  Ateliers de découverte
+  Cycle de vie ERP
+  Processus d'affaires
+  Parties prenantes
+  Transformation numérique
+  Intégration eCommerce
+  Intelligence artificielle appliquée
+  Bilinguisme / Bilingue (FR/EN)
+  ITIL
+  Transfert de connaissances
+  Spécifications fonctionnelles
+
+─────────────────────────────────────────────────────────────
+RECOMMANDATIONS SUPPLÉMENTAIRES
+─────────────────────────────────────────────────────────────
+1. Mettre à jour le profil LinkedIn avec les mots-clés ci-dessus
+2. Préparer 2-3 exemples concrets d'«ateliers de découverte» informels
+   menés chez Groupe AFFI (ex. sessions de définition des besoins par site)
+3. Mentionner la certification ITIL en introduction lors d'un entretien
+4. Si disponible, obtenir une certification officielle MB-800
+   (Microsoft Certified: Dynamics 365 Business Central Functional Consultant)
+=============================================================
