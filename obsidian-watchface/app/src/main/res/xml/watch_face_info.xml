@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WatchFaceInfo>
+    <!-- Watch face selector preview image -->
+    <Preview value="@drawable/preview" />
+
+    <!-- Category tag shown in the watch face picker -->
+    <Category value="CATEGORY_EMPTY" />
+
+    <!-- Visible in retail demo mode -->
+    <AvailableInRetail value="true" />
+
+    <!-- Allow users to save multiple instances with different color themes -->
+    <MultipleInstancesAllowed value="true" />
+
+    <!-- Has user-configurable settings (color themes, complications) -->
+    <Editable value="true" />
+</WatchFaceInfo>

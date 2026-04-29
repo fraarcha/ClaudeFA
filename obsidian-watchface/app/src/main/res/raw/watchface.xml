@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║                   OBSIDIAN — Watch Face                      ║
+  ║         Luxury Minimal Analog · Watch Face Format v1         ║
+  ║         Compatible: Wear OS 4+ (API 33+)                     ║
+  ║         Tested on: Pixel Watch 2, Galaxy Watch 6             ║
+  ╚══════════════════════════════════════════════════════════════╝
+
+  Canvas: 450×450 px (scaled to device by the OS)
+  Center: (225, 225)
+
+  Layout zones:
+    Date       — top-center, 225×143 area
+    Battery    — left, ~(45–125, 210–240)
+    Hands      — AnalogClock covering full canvas
+    Steps      — ComplicationSlot, bottom-center, y≈300
+    Heart rate — ComplicationSlot, right, x≈298
+
+  Color themes (via themeColor ColorConfiguration):
+    Index .0 = primary marker / accent ring color
+    Index .1 = secondary / complication accent + second hand
+    Index .2 = hand color (typically white for contrast)
+    Index .3 = reserved dark tint for ambient backgrounds
+-->
+
+<WatchFace width="450" height="450" clipShape="CIRCLE">
+
+  <!-- ═══════════════════════════════════════════════════════
+       USER CONFIGURATIONS — 4 luxury color themes
+       Users select in the watch face settings screen.
+       ═══════════════════════════════════════════════════════ -->
+  <UserConfigurations>
+    <ColorConfiguration
+        id="themeColor"
+        displayName="@string/config_theme_label"
+        defaultValue="0">
+
+      <!--
+          Format: "primary secondary hands dark-tint"
+            primary   = hour markers, outer ring, date text, center jewel
+            secondary = second hand, complication text, battery highlight
+            hands     = hour + minute hand color (white for all themes)
+            dark-tint = subtle dark variant used in ambient backgrounds
+      -->
+
+      <!-- GOLD — warm classic luxury -->
+      <ColorOption id="0" displayName="@string/theme_gold"
+          colors="#D4AF37 #FFD700 #FFFFFF #0D0C05" />
+
+      <!-- SILVER — cool contemporary minimal -->
+      <ColorOption id="1" displayName="@string/theme_silver"
+          colors="#A8A8A8 #E0E0E0 #FFFFFF #080808" />
+
+      <!-- ROSE GOLD — modern feminine luxury -->
+      <ColorOption id="2" displayName="@string/theme_rose"
+          colors="#C9797F #FF8FAB #FFFFFF #100508" />
+
+      <!-- OCEAN — bold deep-sea blue -->
+      <ColorOption id="3" displayName="@string/theme_ocean"
+          colors="#0077B6 #00B4D8 #FFFFFF #000811" />
+
+    </ColorConfiguration>
+  </UserConfigurations>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       SCENE
+       ═══════════════════════════════════════════════════════ -->
+  <Scene backgroundColor="#FF000000">
+
+
+    <!-- ─────────────────────────────────────────────────────
+         LAYER 1 — Background atmosphere
+         Pure AMOLED black saves battery; outer ring adds depth.
+         ───────────────────────────────────────────────────── -->
+
+    <!-- Outer accent ring (thin, themed color) -->
+    <PartDraw x="0" y="0" width="450" height="450">
+      <Ellipse x="8" y="8" width="434" height="434">
+        <Stroke color="[CONFIGURATION.themeColor.0]" width="2" />
+      </Ellipse>
+    </PartDraw>
+
+    <!-- Secondary inner ring (very subtle, always white-faint) -->
+    <PartDraw x="0" y="0" width="450" height="450">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Ellipse x="20" y="20" width="410" height="410">
+        <Stroke color="#18FFFFFF" width="1" />
+      </Ellipse>
+    </PartDraw>
+
+
+    <!-- ─────────────────────────────────────────────────────
+         LAYER 2 — Hour markers
+         12 circular dots at r=204 from center (225,225).
+         Cardinal positions (12/3/6/9) are diameter=8;
+         intermediate hours are diameter=6.
+
+         Positions calculated as:
+           cx = 225 + 204 * sin(i * 30°)
+           cy = 225 - 204 * cos(i * 30°)
+           Ellipse x = cx - r, y = cy - r, width = height = 2r
+         ───────────────────────────────────────────────────── -->
+    <PartDraw x="0" y="0" width="450" height="450">
+
+      <!-- 12 o'clock  cx=225, cy=21    r=4 -->
+      <Ellipse x="221" y="17" width="8" height="8">
+        <Fill color="[CONFIGURATION.themeColor.0]" />
+      </Ellipse>
+
+      <!-- 1 o'clock   cx=327, cy=48    r=3 -->
+      <Ellipse x="324" y="45" width="6" height="6">
+        <Fill color="[CONFIGURATION.themeColor.0]" />
+      </Ellipse>
+
+      <!-- 2 o'clock   cx=402, cy=123   r=3 -->
+      <Ellipse x="399" y="120" width="6" height="6">
+        <Fill color="[CONFIGURATION.themeColor.0]" />
+      </Ellipse>
+
+      <!-- 3 o'clock   cx=429, cy=225   r=4 -->
+      <Ellipse x="425" y="221" width="8" height="8">
+        <Fill color="[CONFIGURATION.themeColor.0]" />
+      </Ellipse>
+
+      <!-- 4 o'clock   cx=402, cy=327   r=3 -->
+      <Ellipse x="399" y="324" width="6" height="6">
+        <Fill color="[CONFIGURATION.themeColor.0]" />
+      </Ellipse>
+
+      <!-- 5 o'clock   cx=327, cy=402   r=3 -->
+      <Ellipse x="324" y="399" width="6" height="6">
+        <Fill color="[CONFIGURATION.themeColor.0]" />
+      </Ellipse>
+
+      <!-- 6 o'clock   cx=225, cy=429   r=4 -->
+      <Ellipse x="221" y="425" width="8" height="8">
+        <Fill color="[CONFIGURATION.themeColor.0]" />
+      </Ellipse>
+
+      <!-- 7 o'clock   cx=123, cy=402   r=3 -->
+      <Ellipse x="120" y="399" width="6" height="6">
+        <Fill color="[CONFIGURATION.themeColor.0]" />
+      </Ellipse>
+
+      <!-- 8 o'clock   cx=48,  cy=327   r=3 -->
+      <Ellipse x="45" y="324" width="6" height="6">
+        <Fill color="[CONFIGURATION.themeColor.0]" />
+      </Ellipse>
+
+      <!-- 9 o'clock   cx=21,  cy=225   r=4 -->
+      <Ellipse x="17" y="221" width="8" height="8">
+        <Fill color="[CONFIGURATION.themeColor.0]" />
+      </Ellipse>
+
+      <!-- 10 o'clock  cx=48,  cy=123   r=3 -->
+      <Ellipse x="45" y="120" width="6" height="6">
+        <Fill color="[CONFIGURATION.themeColor.0]" />
+      </Ellipse>
+
+      <!-- 11 o'clock  cx=123, cy=48    r=3 -->
+      <Ellipse x="120" y="45" width="6" height="6">
+        <Fill color="[CONFIGURATION.themeColor.0]" />
+      </Ellipse>
+
+    </PartDraw>
+
+
+    <!-- ─────────────────────────────────────────────────────
+         LAYER 3 — Date display (top center, y≈140)
+         Shows "WED 15" — day-of-week short + day number.
+         Hidden / dimmed in ambient to save power.
+         ───────────────────────────────────────────────────── -->
+
+    <!-- Subtle pill background for the date area -->
+    <PartDraw x="162" y="132" width="126" height="30">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <RoundRectangle x="0" y="0" width="126" height="30"
+          cornerRadiusX="15" cornerRadiusY="15">
+        <Fill color="#14FFFFFF" />
+      </RoundRectangle>
+    </PartDraw>
+
+    <!-- Date text -->
+    <PartText x="162" y="132" width="126" height="30">
+      <Variant mode="AMBIENT" target="alpha" value="100" />
+      <Text align="CENTER">
+        <Font family="SYNC_TO_DEVICE" size="17" color="[CONFIGURATION.themeColor.0]">
+          <Template>%s %02d
+            <Parameter expression="[DAY_OF_WEEK_S]" />
+            <Parameter expression="[DAY]" />
+          </Template>
+        </Font>
+      </Text>
+    </PartText>
+
+
+    <!-- ─────────────────────────────────────────────────────
+         LAYER 4 — Battery percentage (left zone, x≈45)
+         Direct system data — no complication permission needed.
+         Fully hidden in ambient mode to reduce visual noise.
+         ───────────────────────────────────────────────────── -->
+
+    <!-- Battery label -->
+    <PartText x="40" y="198" width="82" height="16">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="SYNC_TO_DEVICE" size="10" color="#55FFFFFF">
+          <Template>BAT</Template>
+        </Font>
+      </Text>
+    </PartText>
+
+    <!-- Battery value -->
+    <PartText x="40" y="214" width="82" height="26">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER">
+        <Font family="SYNC_TO_DEVICE" size="18" color="[CONFIGURATION.themeColor.1]">
+          <Template>%d%%
+            <Parameter expression="[BATTERY_PERCENT_INT]" />
+          </Template>
+        </Font>
+      </Text>
+    </PartText>
+
+
+    <!-- ─────────────────────────────────────────────────────
+         LAYER 5 — Complications
+
+         Two complication slots:
+           Slot 1 — Steps / fitness (bottom center)
+           Slot 2 — Heart rate / any health metric (right)
+
+         Users can reassign each slot to any complication.
+         ───────────────────────────────────────────────────── -->
+
+    <!-- ┌─ SLOT 1: Steps (bottom) ─────────────────────────┐ -->
+    <ComplicationSlot
+        slotId="1"
+        x="158" y="298"
+        width="134" height="50"
+        supportedTypes="SHORT_TEXT RANGED_VALUE GOAL_PROGRESS EMPTY">
+
+      <DefaultProviderPolicy
+          defaultSystemProvider="STEP_COUNT"
+          defaultSystemProviderType="SHORT_TEXT" />
+
+      <BoundingRectangle x="0" y="0" width="134" height="50" outlinePadding="4" />
+
+      <!-- SHORT_TEXT rendering -->
+      <Complication type="SHORT_TEXT">
+        <PartDraw x="0" y="0" width="134" height="50">
+          <RoundRectangle x="0" y="0" width="134" height="50"
+              cornerRadiusX="25" cornerRadiusY="25">
+            <Fill color="#16FFFFFF" />
+          </RoundRectangle>
+        </PartDraw>
+        <PartText x="0" y="0" width="134" height="50">
+          <Text align="CENTER">
+            <Font family="SYNC_TO_DEVICE" size="19" color="[CONFIGURATION.themeColor.1]">
+              <Template>%s
+                <Parameter expression="[COMPLICATION.TEXT]" />
+              </Template>
+            </Font>
+          </Text>
+        </PartText>
+      </Complication>
+
+      <!-- RANGED_VALUE rendering (arc + text) -->
+      <Complication type="RANGED_VALUE">
+        <PartDraw x="0" y="0" width="134" height="50">
+          <RoundRectangle x="0" y="0" width="134" height="50"
+              cornerRadiusX="25" cornerRadiusY="25">
+            <Fill color="#16FFFFFF" />
+          </RoundRectangle>
+        </PartDraw>
+        <PartText x="0" y="0" width="134" height="50">
+          <Text align="CENTER">
+            <Font family="SYNC_TO_DEVICE" size="19" color="[CONFIGURATION.themeColor.1]">
+              <Template>%s
+                <Parameter expression="[COMPLICATION.TEXT]" />
+              </Template>
+            </Font>
+          </Text>
+        </PartText>
+      </Complication>
+
+      <!-- GOAL_PROGRESS rendering -->
+      <Complication type="GOAL_PROGRESS">
+        <PartDraw x="0" y="0" width="134" height="50">
+          <RoundRectangle x="0" y="0" width="134" height="50"
+              cornerRadiusX="25" cornerRadiusY="25">
+            <Fill color="#16FFFFFF" />
+          </RoundRectangle>
+        </PartDraw>
+        <PartText x="0" y="0" width="134" height="50">
+          <Text align="CENTER">
+            <Font family="SYNC_TO_DEVICE" size="19" color="[CONFIGURATION.themeColor.1]">
+              <Template>%s
+                <Parameter expression="[COMPLICATION.TEXT]" />
+              </Template>
+            </Font>
+          </Text>
+        </PartText>
+      </Complication>
+
+    </ComplicationSlot>
+    <!-- └──────────────────────────────────────────────────┘ -->
+
+
+    <!-- ┌─ SLOT 2: Heart Rate (right) ─────────────────────┐ -->
+    <ComplicationSlot
+        slotId="2"
+        x="298" y="192"
+        width="118" height="50"
+        supportedTypes="SHORT_TEXT RANGED_VALUE EMPTY">
+
+      <DefaultProviderPolicy
+          defaultSystemProvider="HEART_RATE"
+          defaultSystemProviderType="SHORT_TEXT" />
+
+      <BoundingRectangle x="0" y="0" width="118" height="50" outlinePadding="4" />
+
+      <!-- SHORT_TEXT rendering -->
+      <Complication type="SHORT_TEXT">
+        <PartDraw x="0" y="0" width="118" height="50">
+          <RoundRectangle x="0" y="0" width="118" height="50"
+              cornerRadiusX="25" cornerRadiusY="25">
+            <Fill color="#16FFFFFF" />
+          </RoundRectangle>
+        </PartDraw>
+        <PartText x="0" y="0" width="118" height="50">
+          <Text align="CENTER">
+            <Font family="SYNC_TO_DEVICE" size="19" color="[CONFIGURATION.themeColor.1]">
+              <Template>%s
+                <Parameter expression="[COMPLICATION.TEXT]" />
+              </Template>
+            </Font>
+          </Text>
+        </PartText>
+      </Complication>
+
+      <!-- RANGED_VALUE rendering -->
+      <Complication type="RANGED_VALUE">
+        <PartDraw x="0" y="0" width="118" height="50">
+          <RoundRectangle x="0" y="0" width="118" height="50"
+              cornerRadiusX="25" cornerRadiusY="25">
+            <Fill color="#16FFFFFF" />
+          </RoundRectangle>
+        </PartDraw>
+        <PartText x="0" y="0" width="118" height="50">
+          <Text align="CENTER">
+            <Font family="SYNC_TO_DEVICE" size="19" color="[CONFIGURATION.themeColor.1]">
+              <Template>%s
+                <Parameter expression="[COMPLICATION.TEXT]" />
+              </Template>
+            </Font>
+          </Text>
+        </PartText>
+      </Complication>
+
+    </ComplicationSlot>
+    <!-- └──────────────────────────────────────────────────┘ -->
+
+
+    <!-- ─────────────────────────────────────────────────────
+         LAYER 6 — AnalogClock hands
+
+         Rendering order within AnalogClock: bottom → top.
+         Shadow hands (semi-transparent dark tint, offset +1px)
+         are drawn first to create a subtle depth illusion, then
+         the main hands on top.
+
+         Hand dimensions (viewport coords):
+           Hour   — resource hand_hour,   10×160, pivotY=0.875 → pivot at y=140
+           Minute — resource hand_minute,  8×215, pivotY=0.907 → pivot at y=195
+           Second — resource hand_second,  4×245, pivotY=0.796 → pivot at y=195
+
+         WFF pivot formula:
+           absolute_pivot_y = hand_y + height × pivotY = 225
+           ⟹ hand_y = 225 − height × pivotY
+
+         hour  : y = 225 − 160×0.875 = 85   x = 225 − 5  = 220
+         minute: y = 225 − 215×0.907 = 30   x = 225 − 4  = 221
+         second: y = 225 − 245×0.796 = 30   x = 225 − 2  = 223
+         ───────────────────────────────────────────────────── -->
+    <AnalogClock x="0" y="0" width="450" height="450">
+
+      <!-- Shadow — hour (drawn below main hand, offset 2px down+right) -->
+      <HourHand
+          resource="hand_hour"
+          x="222" y="87"
+          width="10" height="160"
+          pivotX="0.5" pivotY="0.875"
+          tintColor="#50000000">
+        <Variant mode="AMBIENT" target="alpha" value="0" />
+      </HourHand>
+
+      <!-- Shadow — minute -->
+      <MinuteHand
+          resource="hand_minute"
+          x="223" y="32"
+          width="8" height="215"
+          pivotX="0.5" pivotY="0.907"
+          tintColor="#50000000">
+        <Variant mode="AMBIENT" target="alpha" value="0" />
+      </MinuteHand>
+
+      <!-- Main — hour hand (white, themed via tintColor) -->
+      <HourHand
+          resource="hand_hour"
+          x="220" y="85"
+          width="10" height="160"
+          pivotX="0.5" pivotY="0.875"
+          tintColor="[CONFIGURATION.themeColor.2]">
+        <!-- Slight dim in ambient, never fully hidden -->
+        <Variant mode="AMBIENT" target="alpha" value="180" />
+      </HourHand>
+
+      <!-- Main — minute hand -->
+      <MinuteHand
+          resource="hand_minute"
+          x="221" y="30"
+          width="8" height="215"
+          pivotX="0.5" pivotY="0.907"
+          tintColor="[CONFIGURATION.themeColor.2]">
+        <Variant mode="AMBIENT" target="alpha" value="180" />
+      </MinuteHand>
+
+      <!-- Main — second hand (accent color; hidden in ambient to save power) -->
+      <SecondHand
+          resource="hand_second"
+          x="223" y="30"
+          width="4" height="245"
+          pivotX="0.5" pivotY="0.796"
+          tintColor="[CONFIGURATION.themeColor.1]">
+        <Variant mode="AMBIENT" target="alpha" value="0" />
+        <!-- Sweep: smooth continuous motion at 15 fps instead of 1-second ticks -->
+        <Sweep frequency="15" />
+      </SecondHand>
+
+    </AnalogClock>
+
+
+    <!-- ─────────────────────────────────────────────────────
+         LAYER 7 — Center jewel
+         Drawn last (on top of all hands) to hide the pivot seam.
+         Three concentric circles: black mask → themed gold → black hole
+         ───────────────────────────────────────────────────── -->
+    <PartDraw x="211" y="211" width="28" height="28">
+      <!-- Outer mask (hides the hand pivot) -->
+      <Ellipse x="0" y="0" width="28" height="28">
+        <Fill color="#000000" />
+      </Ellipse>
+      <!-- Accent ring -->
+      <Ellipse x="3" y="3" width="22" height="22">
+        <Fill color="[CONFIGURATION.themeColor.0]" />
+      </Ellipse>
+      <!-- Inner black hole — maintains elegance -->
+      <Ellipse x="8" y="8" width="12" height="12">
+        <Fill color="#000000" />
+      </Ellipse>
+    </PartDraw>
+
+
+  </Scene>
+</WatchFace>

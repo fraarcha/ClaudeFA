@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Hour hand vector — viewport 10×160.
+    Pivot is at y=140 (87.5% from top), matching pivotY=0.875 in watchface.xml.
+    The hand points upward (toward 12) with a hexagonal lozenge tip,
+    a tapered shaft, and a short counterweight tail below the pivot.
+    WFF applies tintColor at runtime, so fill is declared white here.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="10dp"
+    android:height="160dp"
+    android:viewportWidth="10"
+    android:viewportHeight="160">
+
+    <!-- Shaft: tapered lozenge from pointed tip (5,0) to full width, down to pivot -->
+    <path
+        android:pathData="M5,0 L9,18 L9,140 L5,155 L1,140 L1,18 Z"
+        android:fillColor="#FFFFFF" />
+
+    <!-- Rounded cap at tip — tiny circle for polish -->
+    <path
+        android:pathData="M5,1 m-2,0 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0"
+        android:fillColor="#FFFFFF" />
+
+</vector>

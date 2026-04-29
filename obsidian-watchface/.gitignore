@@ -1,0 +1,17 @@
+# Android Studio / Gradle
+.gradle/
+.idea/
+*.iml
+local.properties
+build/
+app/release/
+app/debug/
+
+# Keystore — NEVER commit this
+*.jks
+*.keystore
+keystore.properties
+
+# OS
+.DS_Store
+Thumbs.db

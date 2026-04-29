@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Watch face picker preview — shows OBSIDIAN at 10:10:00 (classic marketing position).
+    Gold theme. Viewport 450×450 matches the WFF canvas exactly.
+    Hour hand  : 305° (10h + 10m×0.5° = 305°)
+    Minute hand: 60°  (10m × 6° = 60°)
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="450dp"
+    android:height="450dp"
+    android:viewportWidth="450"
+    android:viewportHeight="450">
+
+    <!-- ── Background ──────────────────────────────────────── -->
+    <path
+        android:pathData="M225,225 m-225,0 a225,225 0 1,0 450,0 a225,225 0 1,0 -450,0"
+        android:fillColor="#000000" />
+
+    <!-- ── Outer gold accent ring ──────────────────────────── -->
+    <path
+        android:pathData="M225,10 a215,215 0 1,0 0.001,0"
+        android:strokeColor="#D4AF37"
+        android:strokeWidth="1.5"
+        android:fillColor="@android:color/transparent" />
+
+    <!-- ── 12 hour markers (circular dots, r=204 from center 225,225) ─ -->
+    <!-- 12 o'clock -->
+    <path android:pathData="M221,17 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" android:fillColor="#D4AF37" />
+    <!-- 1 o'clock -->
+    <path android:pathData="M324,44 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0" android:fillColor="#D4AF37" />
+    <!-- 2 o'clock -->
+    <path android:pathData="M399,119 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0" android:fillColor="#D4AF37" />
+    <!-- 3 o'clock -->
+    <path android:pathData="M421,221 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" android:fillColor="#D4AF37" />
+    <!-- 4 o'clock -->
+    <path android:pathData="M399,323 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0" android:fillColor="#D4AF37" />
+    <!-- 5 o'clock -->
+    <path android:pathData="M324,398 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0" android:fillColor="#D4AF37" />
+    <!-- 6 o'clock -->
+    <path android:pathData="M221,421 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" android:fillColor="#D4AF37" />
+    <!-- 7 o'clock -->
+    <path android:pathData="M119,398 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0" android:fillColor="#D4AF37" />
+    <!-- 8 o'clock -->
+    <path android:pathData="M44,323 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0" android:fillColor="#D4AF37" />
+    <!-- 9 o'clock -->
+    <path android:pathData="M17,221 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" android:fillColor="#D4AF37" />
+    <!-- 10 o'clock -->
+    <path android:pathData="M44,119 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0" android:fillColor="#D4AF37" />
+    <!-- 11 o'clock -->
+    <path android:pathData="M119,44 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0" android:fillColor="#D4AF37" />
+
+    <!-- ── Date text area (subtle dark pill) ──────────────── -->
+    <path
+        android:pathData="M175,135 Q175,128 182,128 L268,128 Q275,128 275,135 L275,152 Q275,159 268,159 L182,159 Q175,159 175,152 Z"
+        android:fillColor="#15FFFFFF" />
+
+    <!-- ── Battery indicator area ──────────────────────────── -->
+    <path
+        android:pathData="M42,208 Q42,202 48,202 L108,202 Q114,202 114,208 L114,222 Q114,228 108,228 L48,228 Q42,228 42,222 Z"
+        android:fillColor="#10FFFFFF" />
+
+    <!-- ── Steps complication pill (bottom) ───────────────── -->
+    <path
+        android:pathData="M158,302 Q158,295 166,295 L284,295 Q292,295 292,302 L292,320 Q292,327 284,327 L166,327 Q158,327 158,320 Z"
+        android:fillColor="#12FFFFFF" />
+
+    <!-- ── Heart rate complication pill (right) ───────────── -->
+    <path
+        android:pathData="M295,193 Q295,186 303,186 L395,186 Q403,186 403,193 L403,211 Q403,218 395,218 L303,218 Q295,218 295,211 Z"
+        android:fillColor="#12FFFFFF" />
+
+    <!-- ── Minute hand at 60° (10 minutes past) ──────────── -->
+    <!-- Center (225,225) → tip (225+sin60°×195, 225-cos60°×195) = (394,127) -->
+    <!-- Tail (225+sin240°×20, 225-cos240°×20) = (208,235) -->
+    <path
+        android:pathData="M221,228 L208,235 L224,128 L225,126 L226,128 L242,235 Z"
+        android:fillColor="#FFFFFF" />
+
+    <!-- ── Hour hand at 305° (10:10 position) ───────────────  -->
+    <!-- Center (225,225) → tip (225+sin305°×140, 225-cos305°×140) = (110,145) -->
+    <!-- Tail (225+sin125°×20, 225-cos125°×20) = (241,237) -->
+    <path
+        android:pathData="M221,227 L241,237 L113,148 L111,145 L113,143 L225,225 Z"
+        android:fillColor="#FFFFFF" />
+
+    <!-- Re-draw hour hand as clean polygon for better shape -->
+    <path
+        android:pathData="
+            M224,226 L225,224 L226,226
+            L116,149 L113,145 L110,147
+            L221,228 L225,235 L229,228
+            L340,147 Q337,145 334,149 Z"
+        android:fillColor="#00000000" />
+
+    <!-- Hour hand — cleaner version using line from center to tip -->
+    <path
+        android:pathData="M225,225 L113,146"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="7"
+        android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent" />
+    <path
+        android:pathData="M225,225 L237,233"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="5"
+        android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent" />
+
+    <!-- Minute hand — line from center to tip -->
+    <path
+        android:pathData="M225,225 L394,127"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="5"
+        android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent" />
+    <path
+        android:pathData="M225,225 L207,235"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent" />
+
+    <!-- ── Center jewel ───────────────────────────────────── -->
+    <path
+        android:pathData="M225,225 m-12,0 a12,12 0 1,0 24,0 a12,12 0 1,0 -24,0"
+        android:fillColor="#000000" />
+    <path
+        android:pathData="M225,225 m-9,0 a9,9 0 1,0 18,0 a9,9 0 1,0 -18,0"
+        android:fillColor="#D4AF37" />
+    <path
+        android:pathData="M225,225 m-5,0 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0"
+        android:fillColor="#000000" />
+
+</vector>
