@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Second hand vector — viewport 4×245.
+    Pivot is at y=195 (79.6% from top), matching pivotY=0.796 in watchface.xml.
+    Ultra-thin needle with a short counterweight below the pivot.
+    The accent color (themeColor.1) is applied at runtime via tintColor.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="4dp"
+    android:height="245dp"
+    android:viewportWidth="4"
+    android:viewportHeight="245">
+
+    <!-- Needle shaft (above pivot) -->
+    <path
+        android:pathData="M1.5,0 L2.5,0 L2.5,195 L1.5,195 Z"
+        android:fillColor="#FFFFFF" />
+
+    <!-- Counterweight tail (below pivot) — slightly wider -->
+    <path
+        android:pathData="M0.5,195 L3.5,195 L3.5,242 L0.5,242 Z"
+        android:fillColor="#FFFFFF" />
+
+    <!-- Counterweight rounded end -->
+    <path
+        android:pathData="M2,242 m-2,0 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0"
+        android:fillColor="#FFFFFF" />
+
+</vector>

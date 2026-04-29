@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Minute hand vector — viewport 8×215.
+    Pivot is at y=195 (90.7% from top), matching pivotY=0.907 in watchface.xml.
+    Longer and slimmer than the hour hand — elegant lancet silhouette.
+    WFF applies tintColor at runtime.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="8dp"
+    android:height="215dp"
+    android:viewportWidth="8"
+    android:viewportHeight="215">
+
+    <!-- Main shaft with tapered top -->
+    <path
+        android:pathData="M4,0 L7,16 L7,195 L4,210 L1,195 L1,16 Z"
+        android:fillColor="#FFFFFF" />
+
+</vector>

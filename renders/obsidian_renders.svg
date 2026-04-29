@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  OBSIDIAN Watch Face — Design Render Board
+  Shows all 4 color themes at 10:10 position.
+  Each watch face panel is 200×200px (scaled from the 450×450 WFF canvas).
+
+  Marker positions (r=90 from center 100,100):
+    12→(100,10)  1→(145,22)  2→(178,55)  3→(190,100)
+     4→(178,145)  5→(145,178)  6→(100,190)  7→(55,178)
+     8→(22,145)  9→(10,100)  10→(22,55)  11→(55,22)
+
+  Hour hand   at 305° (10:10), tip→(49,64), tail→(108,106), stroke-width=6
+  Minute hand at 60°  (10:10), tip→(175,57), tail→(96,103), stroke-width=4
+-->
+<svg width="960" height="440"
+     viewBox="0 0 960 440"
+     xmlns="http://www.w3.org/2000/svg"
+     font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+
+  <!-- ── Global background ────────────────────────────────── -->
+  <rect width="960" height="440" fill="#080808"/>
+
+  <!-- ── Decorative top border line ───────────────────────── -->
+  <line x1="40" y1="0" x2="40" y2="440" stroke="#1A1A1A" stroke-width="1"/>
+  <line x1="920" y1="0" x2="920" y2="440" stroke="#1A1A1A" stroke-width="1"/>
+
+  <!-- ── Title block ───────────────────────────────────────── -->
+  <text x="480" y="46" text-anchor="middle"
+        font-size="28" font-weight="300" letter-spacing="14"
+        fill="#D4AF37">OBSIDIAN</text>
+  <text x="480" y="66" text-anchor="middle"
+        font-size="11" letter-spacing="3" fill="#555555">
+    LUXURY ANALOG WATCH FACE · WEAR OS 4+
+  </text>
+
+  <!-- thin gold rule under title -->
+  <line x1="360" y1="75" x2="600" y2="75" stroke="#D4AF37" stroke-width="0.5" opacity="0.5"/>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       WATCH FACE PANELS
+       Each panel: 200×200 circle centered in a 220×240 cell.
+       Cells at x: 40, 260, 480, 700  (columns)
+                y: 85  (all same row)
+       ═══════════════════════════════════════════════════════ -->
+
+  <!-- ────────────────────────────────────────────────────────
+       PANEL 1 — GOLD (#D4AF37 / #FFD700)
+       Cell top-left: (40, 85)  Watch center: (150, 185)
+       ──────────────────────────────────────────────────────── -->
+  <g transform="translate(50, 88)">
+    <!-- Watch circle clip -->
+    <defs>
+      <clipPath id="clip1"><circle cx="100" cy="100" r="100"/></clipPath>
+    </defs>
+    <!-- Black face -->
+    <circle cx="100" cy="100" r="100" fill="#000000"/>
+    <!-- Outer accent ring -->
+    <circle cx="100" cy="100" r="98" fill="none" stroke="#D4AF37" stroke-width="1.5"/>
+    <!-- Inner subtle ring -->
+    <circle cx="100" cy="100" r="91" fill="none" stroke="#FFFFFF" stroke-width="0.5" opacity="0.06"/>
+
+    <!-- Hour markers -->
+    <!-- Cardinal (r=4): 12,3,6,9  Others (r=2.5) -->
+    <circle cx="100" cy="10"  r="4"   fill="#D4AF37"/><!-- 12 -->
+    <circle cx="145" cy="22"  r="2.5" fill="#D4AF37"/><!-- 1 -->
+    <circle cx="178" cy="55"  r="2.5" fill="#D4AF37"/><!-- 2 -->
+    <circle cx="190" cy="100" r="4"   fill="#D4AF37"/><!-- 3 -->
+    <circle cx="178" cy="145" r="2.5" fill="#D4AF37"/><!-- 4 -->
+    <circle cx="145" cy="178" r="2.5" fill="#D4AF37"/><!-- 5 -->
+    <circle cx="100" cy="190" r="4"   fill="#D4AF37"/><!-- 6 -->
+    <circle cx="55"  cy="178" r="2.5" fill="#D4AF37"/><!-- 7 -->
+    <circle cx="22"  cy="145" r="2.5" fill="#D4AF37"/><!-- 8 -->
+    <circle cx="10"  cy="100" r="4"   fill="#D4AF37"/><!-- 9 -->
+    <circle cx="22"  cy="55"  r="2.5" fill="#D4AF37"/><!-- 10 -->
+    <circle cx="55"  cy="22"  r="2.5" fill="#D4AF37"/><!-- 11 -->
+
+    <!-- Date pill (top center) -->
+    <rect x="66" y="58" width="68" height="15" rx="7" fill="#FFFFFF" opacity="0.07"/>
+    <text x="100" y="69" text-anchor="middle" font-size="8" fill="#D4AF37" letter-spacing="1">WED 15</text>
+
+    <!-- Battery (left) -->
+    <text x="28" y="97" text-anchor="middle" font-size="5" fill="#FFFFFF" opacity="0.35">BAT</text>
+    <text x="28" y="107" text-anchor="middle" font-size="9" fill="#FFD700" opacity="0.8">84%</text>
+
+    <!-- Steps complication (bottom) -->
+    <rect x="34" y="144" width="66" height="22" rx="11" fill="#FFFFFF" opacity="0.07"/>
+    <text x="67" y="158" text-anchor="middle" font-size="8" fill="#FFD700">8,420</text>
+
+    <!-- Heart rate complication (right) -->
+    <rect x="110" y="88" width="60" height="22" rx="11" fill="#FFFFFF" opacity="0.07"/>
+    <text x="140" y="102" text-anchor="middle" font-size="8" fill="#FFD700">72 bpm</text>
+
+    <!-- Hour hand (305°) — tip(49,64) center(100,100) tail(108,106) -->
+    <line x1="108" y1="106" x2="49" y2="64"
+          stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+    <!-- Minute hand (60°) — tip(175,57) center(100,100) tail(96,103) -->
+    <line x1="96" y1="103" x2="175" y2="57"
+          stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Center jewel -->
+    <circle cx="100" cy="100" r="7" fill="#000000"/>
+    <circle cx="100" cy="100" r="5" fill="#D4AF37"/>
+    <circle cx="100" cy="100" r="2.5" fill="#000000"/>
+  </g>
+  <text x="150" y="316" text-anchor="middle" font-size="11" letter-spacing="2" fill="#D4AF37">GOLD</text>
+
+
+  <!-- ────────────────────────────────────────────────────────
+       PANEL 2 — SILVER (#A8A8A8 / #E0E0E0)
+       Cell top-left: (270, 85)  Watch center: (370, 185)
+       ──────────────────────────────────────────────────────── -->
+  <g transform="translate(270, 88)">
+    <circle cx="100" cy="100" r="100" fill="#000000"/>
+    <circle cx="100" cy="100" r="98" fill="none" stroke="#A8A8A8" stroke-width="1.5"/>
+    <circle cx="100" cy="100" r="91" fill="none" stroke="#FFFFFF" stroke-width="0.5" opacity="0.06"/>
+
+    <circle cx="100" cy="10"  r="4"   fill="#A8A8A8"/>
+    <circle cx="145" cy="22"  r="2.5" fill="#A8A8A8"/>
+    <circle cx="178" cy="55"  r="2.5" fill="#A8A8A8"/>
+    <circle cx="190" cy="100" r="4"   fill="#A8A8A8"/>
+    <circle cx="178" cy="145" r="2.5" fill="#A8A8A8"/>
+    <circle cx="145" cy="178" r="2.5" fill="#A8A8A8"/>
+    <circle cx="100" cy="190" r="4"   fill="#A8A8A8"/>
+    <circle cx="55"  cy="178" r="2.5" fill="#A8A8A8"/>
+    <circle cx="22"  cy="145" r="2.5" fill="#A8A8A8"/>
+    <circle cx="10"  cy="100" r="4"   fill="#A8A8A8"/>
+    <circle cx="22"  cy="55"  r="2.5" fill="#A8A8A8"/>
+    <circle cx="55"  cy="22"  r="2.5" fill="#A8A8A8"/>
+
+    <rect x="66" y="58" width="68" height="15" rx="7" fill="#FFFFFF" opacity="0.07"/>
+    <text x="100" y="69" text-anchor="middle" font-size="8" fill="#A8A8A8" letter-spacing="1">WED 15</text>
+    <text x="28" y="97" text-anchor="middle" font-size="5" fill="#FFFFFF" opacity="0.35">BAT</text>
+    <text x="28" y="107" text-anchor="middle" font-size="9" fill="#E0E0E0" opacity="0.8">84%</text>
+    <rect x="34" y="144" width="66" height="22" rx="11" fill="#FFFFFF" opacity="0.07"/>
+    <text x="67" y="158" text-anchor="middle" font-size="8" fill="#E0E0E0">8,420</text>
+    <rect x="110" y="88" width="60" height="22" rx="11" fill="#FFFFFF" opacity="0.07"/>
+    <text x="140" y="102" text-anchor="middle" font-size="8" fill="#E0E0E0">72 bpm</text>
+
+    <line x1="108" y1="106" x2="49" y2="64" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+    <line x1="96" y1="103" x2="175" y2="57" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+
+    <circle cx="100" cy="100" r="7" fill="#000000"/>
+    <circle cx="100" cy="100" r="5" fill="#A8A8A8"/>
+    <circle cx="100" cy="100" r="2.5" fill="#000000"/>
+  </g>
+  <text x="370" y="316" text-anchor="middle" font-size="11" letter-spacing="2" fill="#A8A8A8">SILVER</text>
+
+
+  <!-- ────────────────────────────────────────────────────────
+       PANEL 3 — ROSE GOLD (#C9797F / #FF8FAB)
+       Cell top-left: (490, 85)  Watch center: (590, 185)
+       ──────────────────────────────────────────────────────── -->
+  <g transform="translate(490, 88)">
+    <circle cx="100" cy="100" r="100" fill="#000000"/>
+    <circle cx="100" cy="100" r="98" fill="none" stroke="#C9797F" stroke-width="1.5"/>
+    <circle cx="100" cy="100" r="91" fill="none" stroke="#FFFFFF" stroke-width="0.5" opacity="0.06"/>
+
+    <circle cx="100" cy="10"  r="4"   fill="#C9797F"/>
+    <circle cx="145" cy="22"  r="2.5" fill="#C9797F"/>
+    <circle cx="178" cy="55"  r="2.5" fill="#C9797F"/>
+    <circle cx="190" cy="100" r="4"   fill="#C9797F"/>
+    <circle cx="178" cy="145" r="2.5" fill="#C9797F"/>
+    <circle cx="145" cy="178" r="2.5" fill="#C9797F"/>
+    <circle cx="100" cy="190" r="4"   fill="#C9797F"/>
+    <circle cx="55"  cy="178" r="2.5" fill="#C9797F"/>
+    <circle cx="22"  cy="145" r="2.5" fill="#C9797F"/>
+    <circle cx="10"  cy="100" r="4"   fill="#C9797F"/>
+    <circle cx="22"  cy="55"  r="2.5" fill="#C9797F"/>
+    <circle cx="55"  cy="22"  r="2.5" fill="#C9797F"/>
+
+    <rect x="66" y="58" width="68" height="15" rx="7" fill="#FFFFFF" opacity="0.07"/>
+    <text x="100" y="69" text-anchor="middle" font-size="8" fill="#C9797F" letter-spacing="1">WED 15</text>
+    <text x="28" y="97" text-anchor="middle" font-size="5" fill="#FFFFFF" opacity="0.35">BAT</text>
+    <text x="28" y="107" text-anchor="middle" font-size="9" fill="#FF8FAB" opacity="0.8">84%</text>
+    <rect x="34" y="144" width="66" height="22" rx="11" fill="#FFFFFF" opacity="0.07"/>
+    <text x="67" y="158" text-anchor="middle" font-size="8" fill="#FF8FAB">8,420</text>
+    <rect x="110" y="88" width="60" height="22" rx="11" fill="#FFFFFF" opacity="0.07"/>
+    <text x="140" y="102" text-anchor="middle" font-size="8" fill="#FF8FAB">72 bpm</text>
+
+    <line x1="108" y1="106" x2="49" y2="64" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+    <line x1="96" y1="103" x2="175" y2="57" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+
+    <circle cx="100" cy="100" r="7" fill="#000000"/>
+    <circle cx="100" cy="100" r="5" fill="#C9797F"/>
+    <circle cx="100" cy="100" r="2.5" fill="#000000"/>
+  </g>
+  <text x="590" y="316" text-anchor="middle" font-size="11" letter-spacing="2" fill="#C9797F">ROSE GOLD</text>
+
+
+  <!-- ────────────────────────────────────────────────────────
+       PANEL 4 — OCEAN (#0077B6 / #00B4D8)
+       Cell top-left: (710, 85)  Watch center: (810, 185)
+       ──────────────────────────────────────────────────────── -->
+  <g transform="translate(710, 88)">
+    <circle cx="100" cy="100" r="100" fill="#000000"/>
+    <circle cx="100" cy="100" r="98" fill="none" stroke="#0077B6" stroke-width="1.5"/>
+    <circle cx="100" cy="100" r="91" fill="none" stroke="#FFFFFF" stroke-width="0.5" opacity="0.06"/>
+
+    <circle cx="100" cy="10"  r="4"   fill="#0077B6"/>
+    <circle cx="145" cy="22"  r="2.5" fill="#0077B6"/>
+    <circle cx="178" cy="55"  r="2.5" fill="#0077B6"/>
+    <circle cx="190" cy="100" r="4"   fill="#0077B6"/>
+    <circle cx="178" cy="145" r="2.5" fill="#0077B6"/>
+    <circle cx="145" cy="178" r="2.5" fill="#0077B6"/>
+    <circle cx="100" cy="190" r="4"   fill="#0077B6"/>
+    <circle cx="55"  cy="178" r="2.5" fill="#0077B6"/>
+    <circle cx="22"  cy="145" r="2.5" fill="#0077B6"/>
+    <circle cx="10"  cy="100" r="4"   fill="#0077B6"/>
+    <circle cx="22"  cy="55"  r="2.5" fill="#0077B6"/>
+    <circle cx="55"  cy="22"  r="2.5" fill="#0077B6"/>
+
+    <rect x="66" y="58" width="68" height="15" rx="7" fill="#FFFFFF" opacity="0.07"/>
+    <text x="100" y="69" text-anchor="middle" font-size="8" fill="#0077B6" letter-spacing="1">WED 15</text>
+    <text x="28" y="97" text-anchor="middle" font-size="5" fill="#FFFFFF" opacity="0.35">BAT</text>
+    <text x="28" y="107" text-anchor="middle" font-size="9" fill="#00B4D8" opacity="0.8">84%</text>
+    <rect x="34" y="144" width="66" height="22" rx="11" fill="#FFFFFF" opacity="0.07"/>
+    <text x="67" y="158" text-anchor="middle" font-size="8" fill="#00B4D8">8,420</text>
+    <rect x="110" y="88" width="60" height="22" rx="11" fill="#FFFFFF" opacity="0.07"/>
+    <text x="140" y="102" text-anchor="middle" font-size="8" fill="#00B4D8">72 bpm</text>
+
+    <line x1="108" y1="106" x2="49" y2="64" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+    <line x1="96" y1="103" x2="175" y2="57" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+
+    <circle cx="100" cy="100" r="7" fill="#000000"/>
+    <circle cx="100" cy="100" r="5" fill="#0077B6"/>
+    <circle cx="100" cy="100" r="2.5" fill="#000000"/>
+  </g>
+  <text x="810" y="316" text-anchor="middle" font-size="11" letter-spacing="2" fill="#0077B6">OCEAN</text>
+
+
+  <!-- ── Divider ─────────────────────────────────────────── -->
+  <line x1="40" y1="330" x2="920" y2="330" stroke="#1A1A1A" stroke-width="1"/>
+
+
+  <!-- ── Feature callouts (bottom bar) ─────────────────── -->
+  <text x="160" y="358" text-anchor="middle" font-size="10" fill="#555555" letter-spacing="1">AMOLED BLACK</text>
+  <text x="160" y="372" text-anchor="middle" font-size="9" fill="#333333">Zero-pixel waste dark background</text>
+
+  <text x="340" y="358" text-anchor="middle" font-size="10" fill="#555555" letter-spacing="1">SMART DATA</text>
+  <text x="340" y="372" text-anchor="middle" font-size="9" fill="#333333">Steps · Heart Rate · Battery · Date</text>
+
+  <text x="520" y="358" text-anchor="middle" font-size="10" fill="#555555" letter-spacing="1">AMBIENT READY</text>
+  <text x="520" y="372" text-anchor="middle" font-size="9" fill="#333333">Low-power always-on display</text>
+
+  <text x="700" y="358" text-anchor="middle" font-size="10" fill="#555555" letter-spacing="1">SWEEP SECOND</text>
+  <text x="700" y="372" text-anchor="middle" font-size="9" fill="#333333">Fluid 15fps second hand motion</text>
+
+  <text x="870" y="358" text-anchor="middle" font-size="10" fill="#555555" letter-spacing="1">4 THEMES</text>
+  <text x="870" y="372" text-anchor="middle" font-size="9" fill="#333333">Gold · Silver · Rose · Ocean</text>
+
+  <!-- ── Bottom label ─────────────────────────────────────── -->
+  <text x="480" y="415" text-anchor="middle" font-size="9" fill="#2A2A2A" letter-spacing="2">
+    OBSIDIAN WATCH FACE · com.obsidian.watchface · WEAR OS 4+
+  </text>
+  <text x="480" y="430" text-anchor="middle" font-size="8" fill="#222222">
+    Watch Face Format v1 · Compatible: Pixel Watch 2/3, Galaxy Watch 6/7, Galaxy Watch Ultra
+  </text>
+
+</svg>

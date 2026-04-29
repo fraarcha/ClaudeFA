@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="watch_face_name">OBSIDIAN Watch Face</string>
+
+    <!-- Color theme configuration labels -->
+    <string name="config_theme_label">Color Theme</string>
+    <string name="theme_gold">Gold</string>
+    <string name="theme_silver">Silver</string>
+    <string name="theme_rose">Rose Gold</string>
+    <string name="theme_ocean">Ocean</string>
+</resources>

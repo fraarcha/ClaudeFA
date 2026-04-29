@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Watch Face Format (WFF) bundles contain only resources — no Java/Kotlin code.
+        The platform's watch face renderer handles all logic.
+    -->
+    <application
+        android:label="@string/watch_face_name"
+        android:icon="@drawable/preview"
+        android:hasCode="false"
+        android:allowBackup="false">
+
+        <!-- WFF version declaration — version 1 targets Wear OS 4+ (API 33+) -->
+        <property
+            android:name="com.google.wear.watchface.format.version"
+            android:value="1" />
+
+        <!-- Watch face info and preview metadata -->
+        <meta-data
+            android:name="android.service.wallpaper"
+            android:resource="@xml/watch_face_info" />
+
+    </application>
+
+</manifest>

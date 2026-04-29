@@ -1,0 +1,43 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.obsidian.watchface'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.obsidian.watchface'
+        // Wear OS 4 (API 33) — WFF version 1 baseline; runs on Pixel Watch, Galaxy Watch 6+
+        minSdk 33
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // Sign with your upload keystore here; see PUBLISH.md for instructions
+        }
+        debug {
+            applicationIdSuffix '.debug'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    bundle {
+        // WFF bundles are resource-only — no code, no splits needed
+        language { enableSplit = false }
+        density { enableSplit = false }
+        abi { enableSplit = false }
+    }
+}
+
+// WFF requires no code dependencies — resource-only bundle
+dependencies {}
