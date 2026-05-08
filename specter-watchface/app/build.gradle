@@ -1,0 +1,30 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.specter.watchface'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.specter.watchface"
+        minSdk 33
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+    }
+
+    bundle {
+        language { enableSplit = false }
+        density  { enableSplit = false }
+        abi      { enableSplit = false }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+}
+
+dependencies {}

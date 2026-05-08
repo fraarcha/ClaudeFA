@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  SPECTER Watch Face — Picker preview (CYBER CYAN theme)
+  Shows digital time "09:15" at standard marketing position.
+  Viewport 450×450 mirrors the WFF canvas exactly.
+  Neon primary: #00E5FF  Secondary: #00B8CC  Battery: #00FFCC
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="450dp"
+    android:height="450dp"
+    android:viewportWidth="450"
+    android:viewportHeight="450">
+
+    <!-- ── Background: pure black ─────────────────────────────────── -->
+    <path android:pathData="M225,225 m-225,0 a225,225 0 1,0 450,0 a225,225 0 1,0 -450,0"
+        android:fillColor="#FF000000"/>
+
+    <!-- ── Scan lines (horizontal banding) ────────────────────────── -->
+    <path android:pathData="M0,30 L450,30 L450,34 L0,34 Z" android:fillColor="#0CFFFFFF"/>
+    <path android:pathData="M0,62 L450,62 L450,66 L0,66 Z" android:fillColor="#0AFFFFFF"/>
+    <path android:pathData="M0,94 L450,94 L450,98 L0,98 Z" android:fillColor="#0CFFFFFF"/>
+    <path android:pathData="M0,126 L450,126 L450,130 L0,130 Z" android:fillColor="#08FFFFFF"/>
+    <path android:pathData="M0,158 L450,158 L450,162 L0,162 Z" android:fillColor="#0CFFFFFF"/>
+    <path android:pathData="M0,190 L450,190 L450,194 L0,194 Z" android:fillColor="#08FFFFFF"/>
+    <path android:pathData="M0,222 L450,222 L450,226 L0,226 Z" android:fillColor="#0CFFFFFF"/>
+    <path android:pathData="M0,254 L450,254 L450,258 L0,258 Z" android:fillColor="#08FFFFFF"/>
+    <path android:pathData="M0,286 L450,286 L450,290 L0,290 Z" android:fillColor="#0CFFFFFF"/>
+    <path android:pathData="M0,318 L450,318 L450,322 L0,322 Z" android:fillColor="#08FFFFFF"/>
+    <path android:pathData="M0,350 L450,350 L450,354 L0,354 Z" android:fillColor="#0CFFFFFF"/>
+    <path android:pathData="M0,382 L450,382 L450,386 L0,386 Z" android:fillColor="#08FFFFFF"/>
+
+    <!-- ── Cityscape silhouette ────────────────────────────────────── -->
+    <path android:pathData="M28,295 L56,295 L56,435 L28,435 Z" android:fillColor="#0D0D1A"/>
+    <path android:pathData="M58,275 L100,275 L100,435 L58,435 Z" android:fillColor="#0D0D1A"/>
+    <path android:pathData="M102,306 L162,306 L162,435 L102,435 Z" android:fillColor="#0D0D1A"/>
+    <path android:pathData="M148,268 L178,268 L178,435 L148,435 Z" android:fillColor="#0D0D1A"/>
+    <path android:pathData="M182,285 L232,285 L232,435 L182,435 Z" android:fillColor="#0D0D1A"/>
+    <path android:pathData="M248,260 L280,260 L280,435 L248,435 Z" android:fillColor="#0D0D1A"/>
+    <path android:pathData="M284,290 L340,290 L340,435 L284,435 Z" android:fillColor="#0D0D1A"/>
+    <path android:pathData="M344,272 L368,272 L368,435 L344,435 Z" android:fillColor="#0D0D1A"/>
+    <path android:pathData="M372,298 L410,298 L410,435 L372,435 Z" android:fillColor="#0D0D1A"/>
+
+    <!-- Window lights -->
+    <path android:pathData="M64,288 L70,288 L70,292 L64,292 Z" android:fillColor="#2200E5FF"/>
+    <path android:pathData="M76,300 L80,300 L80,304 L76,304 Z" android:fillColor="#1A00E5FF"/>
+    <path android:pathData="M156,282 L162,282 L162,286 L156,286 Z" android:fillColor="#2200E5FF"/>
+    <path android:pathData="M254,272 L258,272 L258,276 L254,276 Z" android:fillColor="#1E00E5FF"/>
+    <path android:pathData="M295,298 L303,298 L303,302 L295,302 Z" android:fillColor="#1A00E5FF"/>
+    <path android:pathData="M352,285 L358,285 L358,289 L352,289 Z" android:fillColor="#2200E5FF"/>
+
+    <!-- ── Hooded figure silhouette ────────────────────────────────── -->
+    <!-- Hood ellipse -->
+    <path android:pathData="M152,138 m-73,-60 a73,60 0 1,0 146,0 a73,60 0 1,0 -146,0"
+        android:fillColor="#1C1C2A"/>
+    <!-- Shoulder mass -->
+    <path android:pathData="M225,233 m-123,-85 a123,85 0 1,0 246,0 a123,85 0 1,0 -246,0"
+        android:fillColor="#16161E"/>
+    <!-- Lower cloak -->
+    <path android:pathData="M225,260 m-137,-50 a137,50 0 1,0 274,0 a137,50 0 1,0 -274,0"
+        android:fillColor="#12121A"/>
+
+    <!-- Chest reactor glow -->
+    <path android:pathData="M225,210 m-18,0 a18,18 0 1,0 36,0 a18,18 0 1,0 -36,0"
+        android:fillColor="#3300E5FF"/>
+    <!-- Inner core (neon cyan) -->
+    <path android:pathData="M225,210 m-9,0 a9,9 0 1,0 18,0 a9,9 0 1,0 -18,0"
+        android:fillColor="#FF00E5FF"/>
+    <!-- Ring around core -->
+    <path android:pathData="M225,210 m-21,0 a21,21 0 1,0 42,0 a21,21 0 1,0 -42,0"
+        android:fillColor="#00000000"
+        android:strokeColor="#8800B8CC"
+        android:strokeWidth="1.5"/>
+
+    <!-- ── HUD Corner Brackets ─────────────────────────────────────── -->
+    <!-- Top-left: horizontal + vertical bars -->
+    <path android:pathData="M55,82 L97,82 L97,85 L55,85 Z" android:fillColor="#FF00E5FF"/>
+    <path android:pathData="M55,82 L58,82 L58,124 L55,124 Z" android:fillColor="#FF00E5FF"/>
+    <!-- Top-right -->
+    <path android:pathData="M353,82 L395,82 L395,85 L353,85 Z" android:fillColor="#FF00E5FF"/>
+    <path android:pathData="M392,82 L395,82 L395,124 L392,124 Z" android:fillColor="#FF00E5FF"/>
+    <!-- Bottom-left -->
+    <path android:pathData="M55,365 L58,365 L58,365 L55,365 Z" android:fillColor="#FF00E5FF"/>
+    <path android:pathData="M55,326 L58,326 L58,368 L55,368 Z" android:fillColor="#FF00E5FF"/>
+    <path android:pathData="M55,365 L97,365 L97,368 L55,368 Z" android:fillColor="#FF00E5FF"/>
+    <!-- Bottom-right -->
+    <path android:pathData="M392,326 L395,326 L395,368 L392,368 Z" android:fillColor="#FF00E5FF"/>
+    <path android:pathData="M353,365 L395,365 L395,368 L353,368 Z" android:fillColor="#FF00E5FF"/>
+
+    <!-- ── Divider lines ────────────────────────────────────────────── -->
+    <path android:pathData="M82,96 L368,96 L368,97 L82,97 Z" android:fillColor="#AA00B8CC"/>
+    <path android:pathData="M82,218 L368,218 L368,219 L82,219 Z" android:fillColor="#AA00B8CC"/>
+    <path android:pathData="M82,296 L368,296 L368,297 L82,297 Z" android:fillColor="#AA00B8CC"/>
+    <path android:pathData="M82,324 L368,324 L368,325 L82,325 Z" android:fillColor="#AA00B8CC"/>
+
+    <!-- ── Date header text hint "VEN 27 MAI" (decorative strokes) ─── -->
+    <!-- Date line rendered as slash marks to hint text -->
+    <path android:pathData="M105,88 L118,88" android:strokeColor="#AA00B8CC" android:strokeWidth="2"/>
+    <path android:pathData="M122,88 L138,88" android:strokeColor="#AA00B8CC" android:strokeWidth="2"/>
+    <path android:pathData="M142,88 L158,88" android:strokeColor="#AA00B8CC" android:strokeWidth="2"/>
+
+    <!-- ── "SYS.TIME" label hint ─────────────────────────────────── -->
+    <path android:pathData="M175,108 L275,108" android:strokeColor="#3300B8CC" android:strokeWidth="2"/>
+
+    <!-- ── Main time "09:15" ───────────────────────────────────────── -->
+    <!-- Digit "0" (first) -->
+    <path android:pathData="M26,118 Q26,112 34,112 L66,112 Q74,112 74,118 L74,208 Q74,214 66,214 L34,214 Q26,214 26,208 Z"
+        android:strokeColor="#FF00E5FF" android:strokeWidth="18" android:strokeLineCap="round"
+        android:fillColor="#00000000"/>
+    <!-- Digit "9" -->
+    <path android:pathData="M86,112 L86,158 Q86,214 140,214 M86,112 Q86,112 140,112 Q168,112 168,142 Q168,175 140,175 L86,175"
+        android:strokeColor="#FF00E5FF" android:strokeWidth="18" android:strokeLineCap="round"
+        android:fillColor="#00000000"/>
+    <!-- Colon dots -->
+    <path android:pathData="M182,145 m-8,0 a8,8 0 1,0 16,0 a8,8 0 1,0 -16,0"
+        android:fillColor="#FF00E5FF"/>
+    <path android:pathData="M182,181 m-8,0 a8,8 0 1,0 16,0 a8,8 0 1,0 -16,0"
+        android:fillColor="#FF00E5FF"/>
+    <!-- Digit "1" (first of 15) -->
+    <path android:pathData="M205,112 L205,214" android:strokeColor="#FF00E5FF"
+        android:strokeWidth="18" android:strokeLineCap="round" android:fillColor="#00000000"/>
+    <!-- Digit "5" -->
+    <path android:pathData="M222,112 L278,112 L278,112 L222,112 L222,163 L278,163 L278,214 L222,214"
+        android:strokeColor="#FF00E5FF" android:strokeWidth="16" android:strokeLineCap="round"
+        android:fillColor="#00000000"/>
+
+    <!-- Seconds hint ":42" -->
+    <path android:pathData="M298,208 L298,208 M302,204 L316,204 L316,212 L302,212 L302,220 L318,220 L318,228"
+        android:strokeColor="#6600B8CC" android:strokeWidth="2.5" android:strokeLineCap="round"
+        android:fillColor="#00000000"/>
+
+    <!-- ── STEPS panel (left) ─────────────────────────────────────── -->
+    <path android:pathData="M46,226 Q46,222 50,222 L202,222 Q206,222 206,226 L206,286 Q206,290 202,290 L50,290 Q46,290 46,286 Z"
+        android:fillColor="#EE040C14"/>
+    <!-- Top border -->
+    <path android:pathData="M46,222 L206,222 L206,224 L46,224 Z" android:fillColor="#AA00B8CC"/>
+    <!-- Left accent -->
+    <path android:pathData="M46,222 L49,222 L49,290 L46,290 Z" android:fillColor="#FF00E5FF"/>
+    <!-- "STEPS" text hint -->
+    <path android:pathData="M56,232 L100,232" android:strokeColor="#AA00B8CC" android:strokeWidth="2"/>
+    <!-- Step count "8,420" hint — bold stroke block -->
+    <path android:pathData="M56,248 L130,248" android:strokeColor="#CC00E5FF" android:strokeWidth="14"
+        android:strokeLineCap="round"/>
+
+    <!-- ── HP panel (right) ───────────────────────────────────────── -->
+    <path android:pathData="M244,226 Q244,222 248,222 L400,222 Q404,222 404,226 L404,286 Q404,290 400,290 L248,290 Q244,290 244,286 Z"
+        android:fillColor="#EE040C14"/>
+    <!-- Top border -->
+    <path android:pathData="M244,222 L404,222 L404,224 L244,224 Z" android:fillColor="#AA00B8CC"/>
+    <!-- Right accent -->
+    <path android:pathData="M401,222 L404,222 L404,290 L401,290 Z" android:fillColor="#FF00E5FF"/>
+    <!-- "HP [BPM]" text hint -->
+    <path android:pathData="M252,232 L310,232" android:strokeColor="#AA00B8CC" android:strokeWidth="2"/>
+    <!-- BPM value hint -->
+    <path android:pathData="M252,248 L320,248" android:strokeColor="#CC00E5FF" android:strokeWidth="14"
+        android:strokeLineCap="round"/>
+
+    <!-- ── Status bar ─────────────────────────────────────────────── -->
+    <path android:pathData="M82,296 L368,296 L368,324 L82,324 Z" android:fillColor="#0AFFFFFF"/>
+    <!-- "PWR: 73%" hint text -->
+    <path android:pathData="M88,308 L170,308" android:strokeColor="#4400FFCC" android:strokeWidth="3"
+        android:strokeLineCap="round"/>
+    <!-- "NET: ONLINE" hint -->
+    <path android:pathData="M240,308 L360,308" android:strokeColor="#3300B8CC" android:strokeWidth="3"
+        android:strokeLineCap="round"/>
+
+    <!-- ── RPG Battery bar (right edge) ───────────────────────────── -->
+    <!-- Track bg pill -->
+    <path android:pathData="M404,104 Q404,97 411,97 L418,97 Q425,97 418,97 a7,7 0 0,1 0,226 Q404,330 411,330 a7,7 0 0,1 -7,-7 Z"
+        android:fillColor="#1AFFFFFF"/>
+    <!-- Simplified: rectangle track -->
+    <path android:pathData="M405,104 L419,104 L419,330 L405,330 Z" android:fillColor="#15FFFFFF"/>
+    <!-- Fill (73% = 166px from bottom, top masked ~60px) -->
+    <path android:pathData="M407,170 L417,170 L417,328 L407,328 Z" android:fillColor="#FF00FFCC"/>
+    <!-- Tick 75% -->
+    <path android:pathData="M403,162 L421,162" android:strokeColor="#66FFFFFF" android:strokeWidth="2"/>
+    <!-- Tick 50% -->
+    <path android:pathData="M402,217 L422,217" android:strokeColor="#88FFFFFF" android:strokeWidth="2"/>
+    <!-- Tick 25% -->
+    <path android:pathData="M403,273 L421,273" android:strokeColor="#66FFFFFF" android:strokeWidth="2"/>
+    <!-- Cap nub -->
+    <path android:pathData="M409,98 L415,98 L415,106 L409,106 Z" android:fillColor="#55FFFFFF"/>
+
+    <!-- ── Outer neon ring ─────────────────────────────────────────── -->
+    <path android:pathData="M225,225 m-220,0 a220,220 0 1,0 440,0 a220,220 0 1,0 -440,0"
+        android:fillColor="#00000000"
+        android:strokeColor="#1800E5FF"
+        android:strokeWidth="2.5"/>
+    <!-- Inner ring -->
+    <path android:pathData="M225,225 m-206,0 a206,206 0 1,0 412,0 a206,206 0 1,0 -412,0"
+        android:fillColor="#00000000"
+        android:strokeColor="#0CFFFFFF"
+        android:strokeWidth="1"/>
+
+</vector>

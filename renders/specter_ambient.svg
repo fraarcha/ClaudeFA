@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  SPECTER Watch Face — Ambient Mode Comparison
+  860 × 500  (active | ambient | callout annotations)
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="520"
+     viewBox="0 0 860 520" style="background:#03030A">
+
+  <defs>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="glowd" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <clipPath id="ca"><circle cx="200" cy="268" r="148"/></clipPath>
+    <clipPath id="cb"><circle cx="560" cy="268" r="148"/></clipPath>
+  </defs>
+
+  <!-- ══ HEADER ════════════════════════════════════════════════════ -->
+  <text x="430" y="36" text-anchor="middle" font-family="monospace"
+    font-size="22" font-weight="bold" fill="#00E5FF" letter-spacing="5">ACTIVE vs AMBIENT</text>
+  <text x="430" y="56" text-anchor="middle" font-family="monospace"
+    font-size="11" fill="#335555AA" letter-spacing="2">SPECTER — POWER MODE COMPARISON</text>
+  <line x1="60" y1="68" x2="800" y2="68" stroke="#1000E5FF" stroke-width="1"/>
+
+  <!-- ══ ACTIVE FACE (left, full brightness) ════════════════════════ -->
+  <g clip-path="url(#ca)">
+    <!-- bg -->
+    <circle cx="200" cy="268" r="148" fill="#000000"/>
+    <!-- scan lines — visible in active -->
+    <rect x="52" y="140" width="296" height="2" fill="#0CFFFFFF"/>
+    <rect x="52" y="160" width="296" height="2" fill="#0AFFFFFF"/>
+    <rect x="52" y="180" width="296" height="2" fill="#0CFFFFFF"/>
+    <rect x="52" y="200" width="296" height="2" fill="#08FFFFFF"/>
+    <rect x="52" y="220" width="296" height="2" fill="#0CFFFFFF"/>
+    <rect x="52" y="240" width="296" height="2" fill="#08FFFFFF"/>
+    <rect x="52" y="260" width="296" height="2" fill="#0CFFFFFF"/>
+    <rect x="52" y="280" width="296" height="2" fill="#08FFFFFF"/>
+    <rect x="52" y="300" width="296" height="2" fill="#0CFFFFFF"/>
+    <rect x="52" y="320" width="296" height="2" fill="#08FFFFFF"/>
+    <rect x="52" y="340" width="296" height="2" fill="#0CFFFFFF"/>
+    <rect x="52" y="360" width="296" height="2" fill="#08FFFFFF"/>
+    <rect x="52" y="380" width="296" height="2" fill="#0CFFFFFF"/>
+    <!-- cityscape -->
+    <rect x="68"  y="345" width="18" height="71" fill="#0D0D1A"/>
+    <rect x="88"  y="330" width="26" height="86" fill="#0D0D1A"/>
+    <rect x="116" y="350" width="36" height="66" fill="#0D0D1A"/>
+    <rect x="155" y="325" width="18" height="91" fill="#0D0D1A"/>
+    <rect x="175" y="338" width="28" height="78" fill="#0D0D1A"/>
+    <rect x="208" y="318" width="20" height="98" fill="#0D0D1A"/>
+    <rect x="230" y="342" width="32" height="74" fill="#0D0D1A"/>
+    <rect x="265" y="328" width="16" height="88" fill="#0D0D1A"/>
+    <rect x="284" y="348" width="22" height="68" fill="#0D0D1A"/>
+    <!-- window lights -->
+    <rect x="95"  y="336" width="5" height="4" fill="#2200E5FF"/>
+    <rect x="161" y="330" width="5" height="4" fill="#1E00E5FF"/>
+    <rect x="270" y="334" width="5" height="4" fill="#2200E5FF"/>
+    <!-- figure -->
+    <ellipse cx="200" cy="218" rx="45" ry="38" fill="#1C1C2A"/>
+    <ellipse cx="200" cy="262" rx="74" ry="52" fill="#16161E"/>
+    <ellipse cx="200" cy="290" rx="84" ry="33" fill="#12121A"/>
+    <!-- chest glow — full brightness active -->
+    <circle cx="200" cy="264" r="10" fill="#4400E5FF"/>
+    <circle cx="200" cy="264" r="5" fill="#FF00E5FF" filter="url(#glow)"/>
+    <circle cx="200" cy="264" r="13" fill="none" stroke="#8800B8CC" stroke-width="2"/>
+    <!-- HUD brackets — full neon -->
+    <rect x="64"  y="128" width="26" height="3" fill="#00E5FF"/>
+    <rect x="64"  y="128" width="3"  height="26" fill="#00E5FF"/>
+    <rect x="310" y="128" width="26" height="3" fill="#00E5FF"/>
+    <rect x="333" y="128" width="3"  height="26" fill="#00E5FF"/>
+    <rect x="64"  y="378" width="3"  height="26" fill="#00E5FF"/>
+    <rect x="64"  y="401" width="26" height="3"  fill="#00E5FF"/>
+    <rect x="333" y="378" width="3"  height="26" fill="#00E5FF"/>
+    <rect x="310" y="401" width="26" height="3"  fill="#00E5FF"/>
+    <!-- time — full cyan -->
+    <text x="200" y="248" text-anchor="middle" font-family="monospace"
+      font-size="58" font-weight="bold" fill="#00E5FF" filter="url(#glow)">09:15</text>
+    <text x="200" y="138" text-anchor="middle" font-family="monospace"
+      font-size="9" fill="#00B8CC">VEN 27 MAI</text>
+    <line x1="80" y1="142" x2="320" y2="142" stroke="#00B8CC" stroke-width="0.8" opacity="0.7"/>
+    <line x1="80" y1="263" x2="320" y2="263" stroke="#00B8CC" stroke-width="0.8" opacity="0.7"/>
+    <!-- comps — full brightness -->
+    <rect x="72"  y="270" width="96" height="36" rx="2" fill="#0A040C14" stroke="#00B8CC" stroke-width="0.7"/>
+    <text x="78"  y="280" font-family="monospace" font-size="6" fill="#00B8CC">STEPS</text>
+    <text x="78"  y="298" font-family="monospace" font-size="15" font-weight="bold" fill="#00E5FF">8,420</text>
+    <rect x="174" y="270" width="96" height="36" rx="2" fill="#0A040C14" stroke="#00B8CC" stroke-width="0.7"/>
+    <text x="180" y="280" font-family="monospace" font-size="6" fill="#00B8CC">HP [BPM]</text>
+    <text x="180" y="298" font-family="monospace" font-size="15" font-weight="bold" fill="#00E5FF">72</text>
+    <!-- battery bar -->
+    <rect x="331" y="140" width="9" height="148" rx="4" fill="#15FFFFFF"/>
+    <rect x="332" y="178" width="7" height="110" fill="#00FFCC"/>
+    <line x1="329" y1="157" x2="341" y2="157" stroke="#66FFFFFF" stroke-width="1"/>
+    <line x1="328" y1="214" x2="342" y2="214" stroke="#88FFFFFF" stroke-width="1"/>
+    <line x1="329" y1="251" x2="341" y2="251" stroke="#66FFFFFF" stroke-width="1"/>
+    <!-- outer ring -->
+    <circle cx="200" cy="268" r="146" fill="none" stroke="#1800E5FF" stroke-width="2"/>
+  </g>
+  <!-- circle border -->
+  <circle cx="200" cy="268" r="148" fill="none" stroke="#00E5FF" stroke-width="2" opacity="0.5"/>
+
+  <!-- ══ AMBIENT FACE (right, dimmed monochrome) ════════════════════ -->
+  <g clip-path="url(#cb)">
+    <!-- bg — slightly lighter than pure black for OLED burn prevention -->
+    <circle cx="560" cy="268" r="148" fill="#050508"/>
+    <!-- NO scan lines in ambient — hidden -->
+    <!-- NO cityscape — hidden -->
+    <!-- NO figure silhouette — hidden -->
+    <!-- NO chest glow — hidden -->
+    <!-- HUD brackets — dimmed to 30% white -->
+    <rect x="424" y="128" width="26" height="2" fill="#33FFFFFF"/>
+    <rect x="424" y="128" width="2"  height="26" fill="#33FFFFFF"/>
+    <rect x="670" y="128" width="26" height="2" fill="#33FFFFFF"/>
+    <rect x="693" y="128" width="2"  height="26" fill="#33FFFFFF"/>
+    <rect x="424" y="378" width="2"  height="26" fill="#33FFFFFF"/>
+    <rect x="424" y="402" width="26" height="2"  fill="#33FFFFFF"/>
+    <rect x="693" y="378" width="2"  height="26" fill="#33FFFFFF"/>
+    <rect x="670" y="402" width="26" height="2"  fill="#33FFFFFF"/>
+    <!-- time — dim white, no glow -->
+    <text x="560" y="248" text-anchor="middle" font-family="monospace"
+      font-size="58" font-weight="bold" fill="#CCFFFFFF">09:15</text>
+    <!-- date — dimmed -->
+    <text x="560" y="138" text-anchor="middle" font-family="monospace"
+      font-size="9" fill="#55FFFFFF">VEN 27 MAI</text>
+    <!-- divider lines — barely visible -->
+    <line x1="440" y1="142" x2="680" y2="142" stroke="#22FFFFFF" stroke-width="0.5"/>
+    <line x1="440" y1="263" x2="680" y2="263" stroke="#22FFFFFF" stroke-width="0.5"/>
+    <!-- comps — grey outline, minimal text only -->
+    <rect x="432" y="270" width="96" height="36" rx="2" fill="none" stroke="#33FFFFFF" stroke-width="0.5"/>
+    <text x="438" y="280" font-family="monospace" font-size="6" fill="#44FFFFFF">STEPS</text>
+    <text x="438" y="298" font-family="monospace" font-size="15" font-weight="bold" fill="#88FFFFFF">8,420</text>
+    <rect x="534" y="270" width="96" height="36" rx="2" fill="none" stroke="#33FFFFFF" stroke-width="0.5"/>
+    <text x="540" y="280" font-family="monospace" font-size="6" fill="#44FFFFFF">HP</text>
+    <text x="540" y="298" font-family="monospace" font-size="15" font-weight="bold" fill="#88FFFFFF">72</text>
+    <!-- battery bar — dim -->
+    <rect x="691" y="140" width="9" height="148" rx="4" fill="#0AFFFFFF"/>
+    <rect x="692" y="178" width="7" height="110" fill="#44FFFFFF"/>
+    <line x1="689" y1="157" x2="701" y2="157" stroke="#33FFFFFF" stroke-width="0.5"/>
+    <line x1="688" y1="214" x2="702" y2="214" stroke="#44FFFFFF" stroke-width="0.5"/>
+    <line x1="689" y1="251" x2="701" y2="251" stroke="#33FFFFFF" stroke-width="0.5"/>
+    <!-- outer ring — barely visible -->
+    <circle cx="560" cy="268" r="146" fill="none" stroke="#0CFFFFFF" stroke-width="1"/>
+  </g>
+  <!-- circle border — dim -->
+  <circle cx="560" cy="268" r="148" fill="none" stroke="#33FFFFFF" stroke-width="1" opacity="0.5"/>
+
+  <!-- ══ LABELS ═══════════════════════════════════════════════════ -->
+  <text x="200" y="445" text-anchor="middle" font-family="monospace"
+    font-size="13" font-weight="bold" fill="#00E5FF" letter-spacing="3">ACTIVE MODE</text>
+  <text x="200" y="462" text-anchor="middle" font-family="monospace"
+    font-size="9" fill="#335555AA">Full neon • All elements • Live</text>
+  <text x="560" y="445" text-anchor="middle" font-family="monospace"
+    font-size="13" font-weight="bold" fill="#55FFFFFF" letter-spacing="3">AMBIENT MODE</text>
+  <text x="560" y="462" text-anchor="middle" font-family="monospace"
+    font-size="9" fill="#335555AA">Minimal • OLED-safe • Low power</text>
+
+  <!-- ══ CALLOUT ANNOTATIONS ════════════════════════════════════ -->
+  <!-- Active callouts -->
+  <line x1="64" y1="128" x2="30" y2="108" stroke="#3300E5FF" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="28" y="103" font-family="monospace" font-size="9" fill="#6600E5FF" text-anchor="end">HUD brackets</text>
+
+  <line x1="200" y1="200" x2="30" y2="175" stroke="#3300E5FF" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="28" y="170" font-family="monospace" font-size="9" fill="#6600E5FF" text-anchor="end">Figure silhouette</text>
+
+  <line x1="200" y1="264" x2="30" y2="260" stroke="#3300E5FF" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="28" y="256" font-family="monospace" font-size="9" fill="#6600E5FF" text-anchor="end">Chest reactor</text>
+
+  <line x1="130" y1="350" x2="30" y2="340" stroke="#3300E5FF" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="28" y="335" font-family="monospace" font-size="9" fill="#6600E5FF" text-anchor="end">City skyline</text>
+
+  <line x1="336" y1="200" x2="380" y2="185" stroke="#3300E5FF" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="382" y="182" font-family="monospace" font-size="9" fill="#6600E5FF">RPG battery bar</text>
+
+  <!-- Ambient callouts (right side) -->
+  <line x1="535" y1="248" x2="780" y2="200" stroke="#33444444" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="782" y="197" font-family="monospace" font-size="9" fill="#55555555">Time always visible</text>
+
+  <line x1="530" y1="285" x2="780" y2="270" stroke="#33444444" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="782" y="267" font-family="monospace" font-size="9" fill="#55555555">Complications dimmed</text>
+
+  <line x1="693" y1="200" x2="780" y2="235" stroke="#33444444" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="782" y="232" font-family="monospace" font-size="9" fill="#55555555">Battery: dim</text>
+
+  <line x1="424" y1="150" x2="380" y2="130" stroke="#33444444" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="378" y="127" text-anchor="end" font-family="monospace" font-size="9" fill="#55555555">Brackets: 30% alpha</text>
+
+  <!-- Bottom rule -->
+  <line x1="60" y1="472" x2="800" y2="472" stroke="#0800E5FF" stroke-width="1"/>
+  <text x="430" y="490" text-anchor="middle" font-family="monospace"
+    font-size="9" fill="#22444444">AMBIENT: OLED-SAFE BURN PREVENTION • BATTERY PRESERVATION • ALWAYS-ON READY</text>
+  <text x="430" y="508" text-anchor="middle" font-family="monospace"
+    font-size="9" fill="#22444444">SPECTER • WEAR OS WATCH FACE FORMAT v1</text>
+
+</svg>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="watch_face_name">UKIYO Watch Face</string>
+
+    <string name="config_theme_label">Style</string>
+
+    <!-- Theme names — named after Japanese aesthetic concepts -->
+    <string name="theme_edo">EDO — Vermillion &amp; Indigo</string>
+    <string name="theme_sakura">SAKURA — Rose &amp; Plum</string>
+    <string name="theme_zen">ZEN — Pine &amp; Ivory</string>
+    <string name="theme_kamo">KAMO — Teal &amp; Amber</string>
+</resources>

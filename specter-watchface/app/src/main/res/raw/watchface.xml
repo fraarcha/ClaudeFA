@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  SPECTER Watch Face — Cybernetic Noir
+  ═══════════════════════════════════════════════════════════════════
+  Design: Dark cyberpunk dystopia. Hooded figure silhouette. City
+  skyline. Neon HUD brackets. Scan-line texture. RPG battery bar.
+  Steps + heart-rate data panels in angular frames.
+
+  Canvas: 450×450 (CIRCLE clip, r=225)
+  WFF version: 1
+  Themes: CYBER CYAN / GHOST CRIMSON / MATRIX GREEN / SYNTH VIOLET
+  ═══════════════════════════════════════════════════════════════════
+-->
+<WatchFace width="450" height="450"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- ══════════════════════════════════════════════════════════
+         USER CONFIGURATION — 4 neon themes, 5 colour slots each:
+           .0  primary neon   (time digits, HUD brackets, highlights)
+           .1  secondary neon (labels, dividers, complication borders)
+           .2  battery bar fill
+           .3  dark panel background (AARRGGBB, heavy alpha)
+           .4  figure chest glow / ambient accent
+         ══════════════════════════════════════════════════════════ -->
+    <UserConfigurations>
+        <ColorConfiguration id="neonStyle" displayName="@string/config_neon_label"
+            screenReaderText="@string/config_neon_label" icon="@android:color/transparent">
+
+            <!-- CYBER CYAN -->
+            <ColorOption id="0" displayName="@string/neon_cyber_cyan"
+                colors="#FF00E5FF #AA00B8CC #FF00FFCC #EE040C14 #6600E5FF"/>
+
+            <!-- GHOST CRIMSON -->
+            <ColorOption id="1" displayName="@string/neon_red"
+                colors="#FFFF4455 #AACC2233 #FFFF6600 #EE14040A #5500E5FF"/>
+
+            <!-- MATRIX GREEN -->
+            <ColorOption id="2" displayName="@string/neon_matrix"
+                colors="#FF00FF44 #AA00CC33 #FF99FF00 #EE04100A #6600FF44"/>
+
+            <!-- SYNTH VIOLET -->
+            <ColorOption id="3" displayName="@string/neon_synth"
+                colors="#FFCC44FF #AAAA22CC #FFFF44CC #EE0A0614 #66CC44FF"/>
+        </ColorConfiguration>
+    </UserConfigurations>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SCENE
+         ══════════════════════════════════════════════════════════ -->
+    <Scene backgroundColor="#FF000000">
+
+        <!-- ── 1. SCAN LINES — horizontal noise texture ─────────── -->
+        <!-- 12 bands, every ~32px, cover full 450px height -->
+        <PartDraw x="0" y="28" width="450" height="4" alpha="255">
+            <Rectangle x="0" y="0" width="450" height="4" fillColor="#0CFFFFFF"/>
+        </PartDraw>
+        <PartDraw x="0" y="60" width="450" height="4" alpha="255">
+            <Rectangle x="0" y="0" width="450" height="4" fillColor="#0AFFFFFF"/>
+        </PartDraw>
+        <PartDraw x="0" y="92" width="450" height="4" alpha="255">
+            <Rectangle x="0" y="0" width="450" height="4" fillColor="#0CFFFFFF"/>
+        </PartDraw>
+        <PartDraw x="0" y="124" width="450" height="4" alpha="255">
+            <Rectangle x="0" y="0" width="450" height="4" fillColor="#08FFFFFF"/>
+        </PartDraw>
+        <PartDraw x="0" y="156" width="450" height="4" alpha="255">
+            <Rectangle x="0" y="0" width="450" height="4" fillColor="#0CFFFFFF"/>
+        </PartDraw>
+        <PartDraw x="0" y="188" width="450" height="4" alpha="255">
+            <Rectangle x="0" y="0" width="450" height="4" fillColor="#08FFFFFF"/>
+        </PartDraw>
+        <PartDraw x="0" y="220" width="450" height="4" alpha="255">
+            <Rectangle x="0" y="0" width="450" height="4" fillColor="#0CFFFFFF"/>
+        </PartDraw>
+        <PartDraw x="0" y="252" width="450" height="4" alpha="255">
+            <Rectangle x="0" y="0" width="450" height="4" fillColor="#08FFFFFF"/>
+        </PartDraw>
+        <PartDraw x="0" y="284" width="450" height="4" alpha="255">
+            <Rectangle x="0" y="0" width="450" height="4" fillColor="#0CFFFFFF"/>
+        </PartDraw>
+        <PartDraw x="0" y="316" width="450" height="4" alpha="255">
+            <Rectangle x="0" y="0" width="450" height="4" fillColor="#08FFFFFF"/>
+        </PartDraw>
+        <PartDraw x="0" y="348" width="450" height="4" alpha="255">
+            <Rectangle x="0" y="0" width="450" height="4" fillColor="#0CFFFFFF"/>
+        </PartDraw>
+        <PartDraw x="0" y="380" width="450" height="4" alpha="255">
+            <Rectangle x="0" y="0" width="450" height="4" fillColor="#08FFFFFF"/>
+        </PartDraw>
+
+        <!-- ── 2. CITYSCAPE SILHOUETTE (bottom, dark buildings) ─── -->
+        <!-- Skyline sits from y≈285 to y≈430, all dark #0D0D1A -->
+        <!-- Building A — far left, tall narrow -->
+        <PartDraw x="28" y="295" width="28" height="140" alpha="255">
+            <Rectangle x="0" y="0" width="28" height="140" fillColor="#0D0D1A"/>
+        </PartDraw>
+        <!-- Building B — medium -->
+        <PartDraw x="58" y="275" width="42" height="160" alpha="255">
+            <Rectangle x="0" y="0" width="42" height="160" fillColor="#0D0D1A"/>
+        </PartDraw>
+        <!-- Building C — wide short -->
+        <PartDraw x="102" y="306" width="60" height="129" alpha="255">
+            <Rectangle x="0" y="0" width="60" height="129" fillColor="#0D0D1A"/>
+        </PartDraw>
+        <!-- Building D — tall center-left -->
+        <PartDraw x="148" y="268" width="30" height="167" alpha="255">
+            <Rectangle x="0" y="0" width="30" height="167" fillColor="#0D0D1A"/>
+        </PartDraw>
+        <!-- Building E — center medium -->
+        <PartDraw x="182" y="285" width="50" height="150" alpha="255">
+            <Rectangle x="0" y="0" width="50" height="150" fillColor="#0D0D1A"/>
+        </PartDraw>
+        <!-- Building F — center-right tall -->
+        <PartDraw x="248" y="260" width="32" height="175" alpha="255">
+            <Rectangle x="0" y="0" width="32" height="175" fillColor="#0D0D1A"/>
+        </PartDraw>
+        <!-- Building G — wide right -->
+        <PartDraw x="284" y="290" width="56" height="145" alpha="255">
+            <Rectangle x="0" y="0" width="56" height="145" fillColor="#0D0D1A"/>
+        </PartDraw>
+        <!-- Building H — right narrow tall -->
+        <PartDraw x="344" y="272" width="24" height="163" alpha="255">
+            <Rectangle x="0" y="0" width="24" height="163" fillColor="#0D0D1A"/>
+        </PartDraw>
+        <!-- Building I — far right -->
+        <PartDraw x="372" y="298" width="38" height="137" alpha="255">
+            <Rectangle x="0" y="0" width="38" height="137" fillColor="#0D0D1A"/>
+        </PartDraw>
+
+        <!-- Window lights — tiny neon dots in buildings -->
+        <PartDraw x="64" y="288" width="6" height="4" alpha="255">
+            <Rectangle x="0" y="0" width="6" height="4" fillColor="#2200E5FF"/>
+        </PartDraw>
+        <PartDraw x="76" y="300" width="4" height="4" alpha="255">
+            <Rectangle x="0" y="0" width="4" height="4" fillColor="#1A00E5FF"/>
+        </PartDraw>
+        <PartDraw x="156" y="282" width="6" height="4" alpha="255">
+            <Rectangle x="0" y="0" width="6" height="4" fillColor="#2200E5FF"/>
+        </PartDraw>
+        <PartDraw x="254" y="272" width="4" height="4" alpha="255">
+            <Rectangle x="0" y="0" width="4" height="4" fillColor="#1E00E5FF"/>
+        </PartDraw>
+        <PartDraw x="295" y="298" width="8" height="4" alpha="255">
+            <Rectangle x="0" y="0" width="8" height="4" fillColor="#1A00E5FF"/>
+        </PartDraw>
+        <PartDraw x="352" y="285" width="6" height="4" alpha="255">
+            <Rectangle x="0" y="0" width="6" height="4" fillColor="#2200E5FF"/>
+        </PartDraw>
+
+        <!-- ── 3. HOODED FIGURE SILHOUETTE ───────────────────────── -->
+        <!-- Hood (top rounded shape) — ellipse centered ~225,130 -->
+        <PartDraw x="152" y="78" width="146" height="120" alpha="255">
+            <Ellipse x="73" y="60" width="146" height="120" fillColor="#1C1C2A"/>
+        </PartDraw>
+        <!-- Shoulder/cloak mass — wide ellipse below hood -->
+        <PartDraw x="102" y="148" width="246" height="170" alpha="255">
+            <Ellipse x="123" y="85" width="246" height="170" fillColor="#16161E"/>
+        </PartDraw>
+        <!-- Cloak lower fade — wider to blend with bottom -->
+        <PartDraw x="88" y="210" width="274" height="100" alpha="255">
+            <Ellipse x="137" y="50" width="274" height="100" fillColor="#12121A"/>
+        </PartDraw>
+
+        <!-- Chest reactor glow — neon dot at center figure -->
+        <PartDraw x="207" y="192" width="36" height="36" alpha="255">
+            <Ellipse x="18" y="18" width="36" height="36" fillColor="#2200E5FF"/>
+        </PartDraw>
+        <!-- Inner bright core -->
+        <PartDraw x="216" y="201" width="18" height="18" alpha="255">
+            <Ellipse x="9" y="9" width="18" height="18"
+                fillColor="[CONFIGURATION.neonStyle.4]"/>
+        </PartDraw>
+        <!-- Reactive outer ring using theme color -->
+        <PartDraw x="204" y="189" width="42" height="42" alpha="255">
+            <Ellipse x="21" y="21" width="42" height="42" fillColor="#00000000">
+                <Stroke color="[CONFIGURATION.neonStyle.1]" width="1.5"/>
+            </Ellipse>
+        </PartDraw>
+
+        <!-- ── 4. HUD CORNER BRACKETS ─────────────────────────────── -->
+        <!-- Top-left bracket (L rotated 180°) at (55,82) -->
+        <PartDraw x="55" y="82" width="42" height="42" alpha="255">
+            <!-- horizontal bar -->
+            <Rectangle x="0" y="0" width="42" height="3"
+                fillColor="[CONFIGURATION.neonStyle.0]"/>
+            <!-- vertical bar -->
+            <Rectangle x="0" y="0" width="3" height="42"
+                fillColor="[CONFIGURATION.neonStyle.0]"/>
+        </PartDraw>
+        <!-- Top-right bracket at (353,82) — mirrored -->
+        <PartDraw x="353" y="82" width="42" height="42" alpha="255">
+            <!-- horizontal bar -->
+            <Rectangle x="0" y="0" width="42" height="3"
+                fillColor="[CONFIGURATION.neonStyle.0]"/>
+            <!-- vertical bar -->
+            <Rectangle x="39" y="0" width="3" height="42"
+                fillColor="[CONFIGURATION.neonStyle.0]"/>
+        </PartDraw>
+        <!-- Bottom-left bracket at (55,326) -->
+        <PartDraw x="55" y="326" width="42" height="42" alpha="255">
+            <!-- vertical bar -->
+            <Rectangle x="0" y="0" width="3" height="42"
+                fillColor="[CONFIGURATION.neonStyle.0]"/>
+            <!-- horizontal bar -->
+            <Rectangle x="0" y="39" width="42" height="3"
+                fillColor="[CONFIGURATION.neonStyle.0]"/>
+        </PartDraw>
+        <!-- Bottom-right bracket at (353,326) -->
+        <PartDraw x="353" y="326" width="42" height="42" alpha="255">
+            <!-- vertical bar -->
+            <Rectangle x="39" y="0" width="3" height="42"
+                fillColor="[CONFIGURATION.neonStyle.0]"/>
+            <!-- horizontal bar -->
+            <Rectangle x="0" y="39" width="42" height="3"
+                fillColor="[CONFIGURATION.neonStyle.0]"/>
+        </PartDraw>
+
+        <!-- ── 5. HEADER DATE ──────────────────────────────────────── -->
+        <!-- Upper divider line -->
+        <PartDraw x="82" y="96" width="286" height="1" alpha="255">
+            <Rectangle x="0" y="0" width="286" height="1"
+                fillColor="[CONFIGURATION.neonStyle.1]"/>
+        </PartDraw>
+        <!-- "SYS.IDENT" tiny label — leftmost -->
+        <PartText x="82" y="82" width="140" height="14" alpha="255">
+            <Font family="GOTHIC" size="10" weight="BOLD" slant="NORMAL"
+                color="#88FFFFFF"/>
+            <Template>SYS.IDENT</Template>
+        </PartText>
+        <!-- Date: "VEN 27 MAI" style -->
+        <PartText x="82" y="82" width="286" height="14" alpha="255"
+            pivotX="0.5" pivotY="0">
+            <Font family="GOTHIC" size="11" weight="BOLD" slant="NORMAL"
+                color="[CONFIGURATION.neonStyle.1]"/>
+            <Template>%s %02d %s
+                <Parameter expression="[DAY_OF_WEEK_S]"/>
+                <Parameter expression="[DAY]"/>
+                <Parameter expression="[MONTH_S]"/>
+            </Template>
+        </PartText>
+        <!-- Lower header divider -->
+        <PartDraw x="82" y="98" width="286" height="1" alpha="255">
+            <Rectangle x="0" y="0" width="286" height="1"
+                fillColor="[CONFIGURATION.neonStyle.1]"/>
+        </PartDraw>
+
+        <!-- ── 6. "SYS.TIME" LABEL above main clock ─────────────── -->
+        <PartText x="82" y="104" width="286" height="16" alpha="255"
+            pivotX="0.5" pivotY="0">
+            <Font family="GOTHIC" size="10" weight="NORMAL" slant="NORMAL"
+                color="#55FFFFFF"/>
+            <Template>&lt; SYS.TIME &gt;</Template>
+        </PartText>
+
+        <!-- ── 7. MAIN TIME DISPLAY ────────────────────────────────── -->
+        <!-- Large neon digits — 09:15 style, font 88, centered -->
+        <PartText x="18" y="114" width="414" height="96" alpha="255"
+            pivotX="0.5" pivotY="0">
+            <Font family="GOTHIC" size="88" weight="BOLD" slant="NORMAL"
+                color="[CONFIGURATION.neonStyle.0]"/>
+            <Template>%02d:%02d
+                <Parameter expression="[HOUR_0_23]"/>
+                <Parameter expression="[MINUTE]"/>
+            </Template>
+        </PartText>
+
+        <!-- Seconds — small, right-aligned after main time -->
+        <PartText x="298" y="206" width="56" height="16" alpha="255">
+            <Font family="GOTHIC" size="13" weight="NORMAL" slant="NORMAL"
+                color="[CONFIGURATION.neonStyle.1]"/>
+            <Template>:%02d
+                <Parameter expression="[SECOND]"/>
+            </Template>
+        </PartText>
+
+        <!-- Time lower divider -->
+        <PartDraw x="82" y="218" width="286" height="1" alpha="255">
+            <Rectangle x="0" y="0" width="286" height="1"
+                fillColor="[CONFIGURATION.neonStyle.1]"/>
+        </PartDraw>
+
+        <!-- ── 8. COMPLICATION — STEPS (left data panel) ─────────── -->
+        <ComplicationSlot slotId="1"
+            supportedTypes="SHORT_TEXT RANGED_VALUE"
+            x="46" y="226" width="160" height="60">
+            <DefaultProviderPolicy
+                defaultSystemProvider="STEP_COUNT"
+                defaultSystemProviderType="SHORT_TEXT"
+                primaryDataSourcesDefaultType="SHORT_TEXT"/>
+            <BoundingRectangle x="46" y="226" width="160" height="60"/>
+
+            <!-- Panel background -->
+            <Complication type="SHORT_TEXT">
+                <PartDraw x="0" y="0" width="160" height="60" alpha="255">
+                    <RoundRectangle x="0" y="0" width="160" height="60"
+                        cornerRadius="4" fillColor="[CONFIGURATION.neonStyle.3]"/>
+                </PartDraw>
+                <!-- Top border line -->
+                <PartDraw x="0" y="0" width="160" height="2" alpha="255">
+                    <Rectangle x="0" y="0" width="160" height="2"
+                        fillColor="[CONFIGURATION.neonStyle.1]"/>
+                </PartDraw>
+                <!-- Left accent bar -->
+                <PartDraw x="0" y="0" width="3" height="60" alpha="255">
+                    <Rectangle x="0" y="0" width="3" height="60"
+                        fillColor="[CONFIGURATION.neonStyle.0]"/>
+                </PartDraw>
+                <!-- "STEPS" label -->
+                <PartText x="8" y="6" width="80" height="14" alpha="255">
+                    <Font family="GOTHIC" size="10" weight="BOLD" slant="NORMAL"
+                        color="[CONFIGURATION.neonStyle.1]"/>
+                    <Template>STEPS</Template>
+                </PartText>
+                <!-- Steps value -->
+                <PartText x="8" y="22" width="148" height="30" alpha="255">
+                    <Font family="GOTHIC" size="26" weight="BOLD" slant="NORMAL"
+                        color="[CONFIGURATION.neonStyle.0]"/>
+                    <Template>[COMPLICATION.TEXT]</Template>
+                </PartText>
+            </Complication>
+
+            <Complication type="RANGED_VALUE">
+                <PartDraw x="0" y="0" width="160" height="60" alpha="255">
+                    <RoundRectangle x="0" y="0" width="160" height="60"
+                        cornerRadius="4" fillColor="[CONFIGURATION.neonStyle.3]"/>
+                </PartDraw>
+                <PartDraw x="0" y="0" width="160" height="2" alpha="255">
+                    <Rectangle x="0" y="0" width="160" height="2"
+                        fillColor="[CONFIGURATION.neonStyle.1]"/>
+                </PartDraw>
+                <PartDraw x="0" y="0" width="3" height="60" alpha="255">
+                    <Rectangle x="0" y="0" width="3" height="60"
+                        fillColor="[CONFIGURATION.neonStyle.0]"/>
+                </PartDraw>
+                <PartText x="8" y="6" width="80" height="14" alpha="255">
+                    <Font family="GOTHIC" size="10" weight="BOLD" slant="NORMAL"
+                        color="[CONFIGURATION.neonStyle.1]"/>
+                    <Template>STEPS</Template>
+                </PartText>
+                <PartText x="8" y="22" width="148" height="30" alpha="255">
+                    <Font family="GOTHIC" size="26" weight="BOLD" slant="NORMAL"
+                        color="[CONFIGURATION.neonStyle.0]"/>
+                    <Template>%d
+                        <Parameter expression="[COMPLICATION.VALUE]"/>
+                    </Template>
+                </PartText>
+            </Complication>
+        </ComplicationSlot>
+
+        <!-- ── 9. COMPLICATION — HEART RATE (right data panel) ───── -->
+        <ComplicationSlot slotId="2"
+            supportedTypes="SHORT_TEXT RANGED_VALUE"
+            x="244" y="226" width="160" height="60">
+            <DefaultProviderPolicy
+                defaultSystemProvider="HEART_RATE"
+                defaultSystemProviderType="SHORT_TEXT"
+                primaryDataSourcesDefaultType="SHORT_TEXT"/>
+            <BoundingRectangle x="244" y="226" width="160" height="60"/>
+
+            <Complication type="SHORT_TEXT">
+                <PartDraw x="0" y="0" width="160" height="60" alpha="255">
+                    <RoundRectangle x="0" y="0" width="160" height="60"
+                        cornerRadius="4" fillColor="[CONFIGURATION.neonStyle.3]"/>
+                </PartDraw>
+                <PartDraw x="0" y="0" width="160" height="2" alpha="255">
+                    <Rectangle x="0" y="0" width="160" height="2"
+                        fillColor="[CONFIGURATION.neonStyle.1]"/>
+                </PartDraw>
+                <!-- Right accent bar -->
+                <PartDraw x="157" y="0" width="3" height="60" alpha="255">
+                    <Rectangle x="0" y="0" width="3" height="60"
+                        fillColor="[CONFIGURATION.neonStyle.0]"/>
+                </PartDraw>
+                <!-- "HP" label (heart points / heart rate) -->
+                <PartText x="8" y="6" width="80" height="14" alpha="255">
+                    <Font family="GOTHIC" size="10" weight="BOLD" slant="NORMAL"
+                        color="[CONFIGURATION.neonStyle.1]"/>
+                    <Template>HP [BPM]</Template>
+                </PartText>
+                <!-- BPM value -->
+                <PartText x="8" y="22" width="148" height="30" alpha="255">
+                    <Font family="GOTHIC" size="26" weight="BOLD" slant="NORMAL"
+                        color="[CONFIGURATION.neonStyle.0]"/>
+                    <Template>[COMPLICATION.TEXT]</Template>
+                </PartText>
+            </Complication>
+
+            <Complication type="RANGED_VALUE">
+                <PartDraw x="0" y="0" width="160" height="60" alpha="255">
+                    <RoundRectangle x="0" y="0" width="160" height="60"
+                        cornerRadius="4" fillColor="[CONFIGURATION.neonStyle.3]"/>
+                </PartDraw>
+                <PartDraw x="0" y="0" width="160" height="2" alpha="255">
+                    <Rectangle x="0" y="0" width="160" height="2"
+                        fillColor="[CONFIGURATION.neonStyle.1]"/>
+                </PartDraw>
+                <PartDraw x="157" y="0" width="3" height="60" alpha="255">
+                    <Rectangle x="0" y="0" width="3" height="60"
+                        fillColor="[CONFIGURATION.neonStyle.0]"/>
+                </PartDraw>
+                <PartText x="8" y="6" width="80" height="14" alpha="255">
+                    <Font family="GOTHIC" size="10" weight="BOLD" slant="NORMAL"
+                        color="[CONFIGURATION.neonStyle.1]"/>
+                    <Template>HP [BPM]</Template>
+                </PartText>
+                <PartText x="8" y="22" width="148" height="30" alpha="255">
+                    <Font family="GOTHIC" size="26" weight="BOLD" slant="NORMAL"
+                        color="[CONFIGURATION.neonStyle.0]"/>
+                    <Template>%d
+                        <Parameter expression="[COMPLICATION.VALUE]"/>
+                    </Template>
+                </PartText>
+            </Complication>
+        </ComplicationSlot>
+
+        <!-- ── 10. COMPLICATION GAP divider -->
+        <PartDraw x="206" y="226" width="38" height="60" alpha="255">
+            <Rectangle x="17" y="0" width="4" height="60" fillColor="#22FFFFFF"/>
+        </PartDraw>
+
+        <!-- ── 11. BOTTOM STATUS BAR ─────────────────────────────── -->
+        <PartDraw x="82" y="296" width="286" height="1" alpha="255">
+            <Rectangle x="0" y="0" width="286" height="1"
+                fillColor="[CONFIGURATION.neonStyle.1]"/>
+        </PartDraw>
+        <!-- Status bar panel bg -->
+        <PartDraw x="82" y="296" width="286" height="28" alpha="255">
+            <Rectangle x="0" y="0" width="286" height="28"
+                fillColor="#0AFFFFFF"/>
+        </PartDraw>
+        <!-- "STATUS" label -->
+        <PartText x="86" y="300" width="60" height="14" alpha="255">
+            <Font family="GOTHIC" size="10" weight="BOLD" slant="NORMAL"
+                color="#55FFFFFF"/>
+            <Template>STATUS</Template>
+        </PartText>
+        <!-- Battery % in status bar -->
+        <PartText x="86" y="308" width="70" height="14" alpha="255">
+            <Font family="GOTHIC" size="11" weight="NORMAL" slant="NORMAL"
+                color="[CONFIGURATION.neonStyle.2]"/>
+            <Template>PWR: [BATTERY_PERCENT_INT]%%</Template>
+        </PartText>
+        <!-- Right side: "ONLINE" / connectivity hint -->
+        <PartText x="230" y="300" width="134" height="14" alpha="255">
+            <Font family="GOTHIC" size="10" weight="BOLD" slant="NORMAL"
+                color="#44FFFFFF"/>
+            <Template>NET: ONLINE</Template>
+        </PartText>
+        <!-- Status bar lower border -->
+        <PartDraw x="82" y="324" width="286" height="1" alpha="255">
+            <Rectangle x="0" y="0" width="286" height="1"
+                fillColor="[CONFIGURATION.neonStyle.1]"/>
+        </PartDraw>
+
+        <!-- ── 12. RPG BATTERY BAR — right edge vertical ─────────── -->
+        <!--
+          Container: x=404, y=104, w=14, h=226
+          Center of bar: x=411 (225+186), within circle at y=104..330
+          Radius check: sqrt((411-225)²+(104-225)²)=sqrt(186²+121²)=222 ✓ just inside
+          Radius check: sqrt((411-225)²+(330-225)²)=sqrt(186²+105²)=216 ✓
+        -->
+        <!-- Track background (dark pill) -->
+        <PartDraw x="404" y="104" width="14" height="226" alpha="255">
+            <RoundRectangle x="0" y="0" width="14" height="226"
+                cornerRadius="7" fillColor="#1AFFFFFF"/>
+        </PartDraw>
+        <!-- Track border -->
+        <PartDraw x="404" y="104" width="14" height="226" alpha="255">
+            <RoundRectangle x="0" y="0" width="14" height="226"
+                cornerRadius="7" fillColor="#00000000">
+                <Stroke color="[CONFIGURATION.neonStyle.1]" width="1.5"/>
+            </RoundRectangle>
+        </PartDraw>
+        <!-- Neon fill — full height (represents 100%) -->
+        <PartDraw x="406" y="106" width="10" height="222" alpha="255">
+            <Rectangle x="0" y="0" width="10" height="222"
+                fillColor="[CONFIGURATION.neonStyle.2]"/>
+        </PartDraw>
+        <!-- Black mask from top — shrinks as battery increases -->
+        <!-- height = 222 - BATTERY_PERCENT_INT * 2.22 -->
+        <PartDraw x="406" y="106" width="10"
+            height="222 - [BATTERY_PERCENT_INT] * 2.22" alpha="255">
+            <Rectangle x="0" y="0" width="10"
+                height="222" fillColor="#FF000000"/>
+        </PartDraw>
+
+        <!-- Tick marks at 75% / 50% / 25% levels on the battery bar -->
+        <!-- 75%: y = 106 + 222*0.25 = 161.5 → 162 -->
+        <PartDraw x="402" y="162" width="18" height="2" alpha="255">
+            <Rectangle x="0" y="0" width="18" height="2" fillColor="#66FFFFFF"/>
+        </PartDraw>
+        <!-- 50%: y = 106 + 222*0.50 = 217 -->
+        <PartDraw x="401" y="217" width="20" height="2" alpha="255">
+            <Rectangle x="0" y="0" width="20" height="2" fillColor="#88FFFFFF"/>
+        </PartDraw>
+        <!-- 25%: y = 106 + 222*0.75 = 272.5 → 273 -->
+        <PartDraw x="402" y="273" width="18" height="2" alpha="255">
+            <Rectangle x="0" y="0" width="18" height="2" fillColor="#66FFFFFF"/>
+        </PartDraw>
+
+        <!-- Battery top cap / nub -->
+        <PartDraw x="408" y="100" width="6" height="6" alpha="255">
+            <Rectangle x="0" y="0" width="6" height="6" fillColor="#55FFFFFF"/>
+        </PartDraw>
+
+        <!-- Battery % text (rotated label to the left of bar) -->
+        <PartText x="388" y="200" width="16" height="30" alpha="255">
+            <Font family="GOTHIC" size="9" weight="NORMAL" slant="NORMAL"
+                color="#88FFFFFF"/>
+            <Template>[BATTERY_PERCENT_INT]</Template>
+        </PartText>
+
+        <!-- ── 13. OUTER DECORATIVE RING ──────────────────────────── -->
+        <PartDraw x="4" y="4" width="442" height="442" alpha="255">
+            <Ellipse x="221" y="221" width="442" height="442"
+                fillColor="#00000000">
+                <Stroke color="#1800E5FF" width="2.5"/>
+            </Ellipse>
+        </PartDraw>
+        <!-- Inner dim ring -->
+        <PartDraw x="18" y="18" width="414" height="414" alpha="255">
+            <Ellipse x="207" y="207" width="414" height="414"
+                fillColor="#00000000">
+                <Stroke color="#0CFFFFFF" width="1"/>
+            </Ellipse>
+        </PartDraw>
+
+    </Scene>
+
+</WatchFace>

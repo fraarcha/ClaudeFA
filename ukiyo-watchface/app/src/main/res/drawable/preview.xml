@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  UKIYO Watch Face — Picker preview in EDO theme (vermillion + indigo).
+  Shows digital time "10:42" at standard marketing position.
+  Viewport 450×450 mirrors the WFF canvas exactly.
+
+  Layout zones drawn here:
+    • Deep night background (#050810)
+    • 3 color blobs (primary=vermillion lower-right, secondary=indigo upper-left, accent=gold upper-right)
+    • 5 concentric wave arcs (lower, themed vermillion, very low opacity)
+    • 時 + 分 kanji watermarks (huge, near-invisible)
+    • 8 cherry blossom dots scattered
+    • Battery arc (left edge, thin, ~70% full example)
+    • Hours "10" in cream, upper-left  (font≈88)
+    • 時 label in gold
+    • Minutes "42" in cream, lower-right (font≈88)
+    • 分 label in gold
+    • Seconds ":36" tiny
+    • Date info (MON / 15)
+    • Steps complication pill (bottom center)
+    • Heart rate complication pill (right)
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="450dp"
+    android:height="450dp"
+    android:viewportWidth="450"
+    android:viewportHeight="450">
+
+    <!-- ── Background ───────────────────────────────────────── -->
+    <path android:pathData="M225,225 m-225,0 a225,225 0 1,0 450,0 a225,225 0 1,0 -450,0"
+        android:fillColor="#050810"/>
+
+    <!-- ── Blob 1: Primary vermillion, lower-right ───────────── -->
+    <!-- Simulated radial gradient via concentric ellipses -->
+    <path android:pathData="M225,225 m-190,75 a200,200 0 1,0 400,0 a200,200 0 1,0 -400,0"
+        android:fillColor="#11D42B1E"/>
+    <path android:pathData="M225,225 m-145,100 a160,160 0 1,0 320,0 a160,160 0 1,0 -320,0"
+        android:fillColor="#1ED42B1E"/>
+    <path android:pathData="M225,225 m-100,120 a120,120 0 1,0 240,0 a120,120 0 1,0 -240,0"
+        android:fillColor="#30D42B1E"/>
+    <path android:pathData="M225,225 m-60,135 a85,85 0 1,0 170,0 a85,85 0 1,0 -170,0"
+        android:fillColor="#44D42B1E"/>
+
+    <!-- ── Blob 2: Secondary indigo, upper-left ──────────────── -->
+    <path android:pathData="M0,0 m0,0 a190,190 0 0,1 200,200"
+        android:fillColor="#00000000"/>
+    <path android:pathData="M70,70 m-110,-110 a200,200 0 0,1 220,0 a200,200 0 0,1 0,220"
+        android:fillColor="#091A2A7A"/>
+    <path android:pathData="M60,60 m-80,-80 a160,160 0 0,1 175,0 a160,160 0 0,1 0,175"
+        android:fillColor="#121A2A7A"/>
+    <path android:pathData="M50,50 m-50,-50 a130,130 0 0,1 140,0 a130,130 0 0,1 0,140"
+        android:fillColor="#201A2A7A"/>
+
+    <!-- ── Blob 3: Accent gold, upper-right ──────────────────── -->
+    <path android:pathData="M320,40 m-100,0 a115,115 0 1,0 200,0 a115,115 0 1,0 -200,0"
+        android:fillColor="#08C89010"/>
+    <path android:pathData="M340,50 m-75,0 a85,85 0 1,0 150,0 a85,85 0 1,0 -150,0"
+        android:fillColor="#12C89010"/>
+    <path android:pathData="M355,60 m-55,0 a60,60 0 1,0 110,0 a60,60 0 1,0 -110,0"
+        android:fillColor="#1EC89010"/>
+
+    <!-- ── Wave arcs (5 concentric, lower area, vermillion 8-20% opacity) ─ -->
+    <!-- Arc centered at (225,225), lower portion startAngle≈130 sweep≈100 -->
+    <path android:pathData="M64,330 A205,205 0 0,1 386,330"
+        android:strokeColor="#20D42B1E" android:strokeWidth="2.5" android:fillColor="@android:color/transparent"/>
+    <path android:pathData="M78,348 A185,185 0 0,1 372,348"
+        android:strokeColor="#18D42B1E" android:strokeWidth="2" android:fillColor="@android:color/transparent"/>
+    <path android:pathData="M92,362 A165,165 0 0,1 358,362"
+        android:strokeColor="#14D42B1E" android:strokeWidth="2" android:fillColor="@android:color/transparent"/>
+    <path android:pathData="M108,374 A145,145 0 0,1 342,374"
+        android:strokeColor="#10D42B1E" android:strokeWidth="1.5" android:fillColor="@android:color/transparent"/>
+    <path android:pathData="M126,384 A125,125 0 0,1 324,384"
+        android:strokeColor="#0CD42B1E" android:strokeWidth="1.5" android:fillColor="@android:color/transparent"/>
+
+    <!-- ── 時 kanji watermark (behind hours, huge, near-invisible) ──── -->
+    <!-- Represented as subtle rectangle hint since vector can't render kanji -->
+    <path android:pathData="M20,45 L20,195 L180,195 L180,45 Z"
+        android:fillColor="#05FFFFFF"/>
+
+    <!-- ── 分 kanji watermark (behind minutes) ──── -->
+    <path android:pathData="M205,215 L205,370 L415,370 L415,215 Z"
+        android:fillColor="#05FFFFFF"/>
+
+    <!-- ── Cherry blossom dots (sakura pink, scattered) ────────── -->
+    <path android:pathData="M68,72 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0"
+        android:fillColor="#50E87896"/>
+    <path android:pathData="M74,62 m-2.5,0 a2.5,2.5 0 1,0 5,0 a2.5,2.5 0 1,0 -5,0"
+        android:fillColor="#40E87896"/>
+    <path android:pathData="M380,88 m-3.5,0 a3.5,3.5 0 1,0 7,0 a3.5,3.5 0 1,0 -7,0"
+        android:fillColor="#45E87896"/>
+    <path android:pathData="M392,72 m-2,0 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0"
+        android:fillColor="#38E87896"/>
+    <path android:pathData="M48,165 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0"
+        android:fillColor="#42E87896"/>
+    <path android:pathData="M392,175 m-2.5,0 a2.5,2.5 0 1,0 5,0 a2.5,2.5 0 1,0 -5,0"
+        android:fillColor="#38E87896"/>
+    <path android:pathData="M55,370 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0"
+        android:fillColor="#40E87896"/>
+    <path android:pathData="M390,295 m-2,0 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0"
+        android:fillColor="#35E87896"/>
+    <path android:pathData="M155,42 m-2.5,0 a2.5,2.5 0 1,0 5,0 a2.5,2.5 0 1,0 -5,0"
+        android:fillColor="#42E87896"/>
+    <path android:pathData="M310,38 m-2,0 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0"
+        android:fillColor="#30E87896"/>
+
+    <!-- ── Battery arc (left edge, ~70% full, from 210° to 330°) ──── -->
+    <!-- Track: center (225,225) r=215, left arc -->
+    <path android:pathData="M37,316 A215,215 0 0,1 37,134"
+        android:strokeColor="#15FFFFFF" android:strokeWidth="4" android:fillColor="@android:color/transparent"/>
+    <!-- Fill: 70% of 120° = 84°, start at 210°, end at 210+84=294° -->
+    <path android:pathData="M37,316 A215,215 0 0,1 94,69"
+        android:strokeColor="#FFC89010" android:strokeWidth="4" android:fillColor="@android:color/transparent"
+        android:strokeLineCap="round"/>
+
+    <!-- ── Hours "10" — large text simulation ────────────────── -->
+    <!-- Digit "1": thin vertical stroke -->
+    <path android:pathData="M75,93 L75,178" android:strokeColor="#FFF5EDD6"
+        android:strokeWidth="22" android:strokeLineCap="round" android:fillColor="@android:color/transparent"/>
+    <!-- Digit "0": a rounded rectangle outline -->
+    <path android:pathData="M98,93 Q98,87 108,87 L143,87 Q153,87 153,93 L153,178 Q153,184 143,184 L108,184 Q98,184 98,178 Z"
+        android:strokeColor="#FFF5EDD6" android:strokeWidth="18" android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent"/>
+
+    <!-- ── 時 label (small gold, next to hours) ──────────────── -->
+    <!-- 時 character hint at ~(162, 152) — rendered as decorative gold mark -->
+    <path android:pathData="M163,147 L163,165 M158,153 L173,153 M163,155 L163,165 M158,162 L173,162"
+        android:strokeColor="#AAC89010" android:strokeWidth="2.5" android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent"/>
+
+    <!-- ── Minutes "42" — lower right ───────────────────────── -->
+    <!-- Digit "4" -->
+    <path android:pathData="M214,238 L214,280 L242,280 M242,238 L242,323"
+        android:strokeColor="#FFF5EDD6" android:strokeWidth="20" android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent"/>
+    <!-- Digit "2" -->
+    <path android:pathData="M260,238 Q260,232 280,232 Q300,232 300,248 Q300,268 260,295 L300,295 L300,323"
+        android:strokeColor="#FFF5EDD6" android:strokeWidth="18" android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent"/>
+
+    <!-- ── 分 label (small gold, next to minutes) ────────────── -->
+    <path android:pathData="M315,295 L315,315 M310,302 L323,302 M315,305 L315,315 M310,312 L323,312"
+        android:strokeColor="#AAC89010" android:strokeWidth="2.5" android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent"/>
+
+    <!-- ── Seconds ":36" (tiny, right area) ─────────────────── -->
+    <path android:pathData="M355,215 L355,215 M360,210 L370,210 L370,218 L358,218 L358,226 L372,226 L372,234"
+        android:strokeColor="#66FFFFFF" android:strokeWidth="2.5" android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent"/>
+
+    <!-- ── Thin horizontal divider between hours & minutes ──── -->
+    <path android:pathData="M40,208 L160,208"
+        android:strokeColor="#18FFFFFF" android:strokeWidth="1" android:fillColor="@android:color/transparent"/>
+
+    <!-- ── Day/Date (lower-left) ────────────────────────────── -->
+    <path android:pathData="M28,362 L80,362" android:strokeColor="#44FFFFFF"
+        android:strokeWidth="1" android:fillColor="@android:color/transparent"/>
+    <!-- "MON" hint -->
+    <path android:pathData="M30,355 L30,370 M30,355 L38,363 L46,355 L46,370 M50,355 L60,355 L60,362 L50,362 L50,370 L60,370"
+        android:strokeColor="#66C89010" android:strokeWidth="2" android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent"/>
+    <!-- "15" date hint -->
+    <path android:pathData="M30,378 L30,400 M36,375 L36,400 M30,400 L48,400"
+        android:strokeColor="#99FFFFFF" android:strokeWidth="3.5" android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent"/>
+
+    <!-- ── Steps complication pill (bottom center) ──────────── -->
+    <path android:pathData="M148,357 Q148,350 156,350 L294,350 Q302,350 302,357 L302,375 Q302,382 294,382 L156,382 Q148,382 148,375 Z"
+        android:fillColor="#12FFFFFF"/>
+    <!-- "8,420 steps" hint -->
+    <path android:pathData="M225,367 m-35,0 L225,367 m0,-4 L225,371"
+        android:strokeColor="#88D42B1E" android:strokeWidth="2" android:fillColor="@android:color/transparent"/>
+    <path android:pathData="M182,365 L268,365"
+        android:strokeColor="#44D42B1E" android:strokeWidth="8" android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent"/>
+
+    <!-- ── Heart rate complication pill (right) ─────────────── -->
+    <path android:pathData="M305,286 Q305,279 313,279 L405,279 Q413,279 413,286 L413,304 Q413,311 405,311 L313,311 Q305,311 305,304 Z"
+        android:fillColor="#12FFFFFF"/>
+    <path android:pathData="M348,296 L365,296"
+        android:strokeColor="#44D42B1E" android:strokeWidth="6" android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent"/>
+
+    <!-- ── Fine outer glow ring ───────────────────────────────── -->
+    <path android:pathData="M225,225 m-220,0 a220,220 0 1,0 440,0 a220,220 0 1,0 -440,0"
+        android:strokeColor="#20D42B1E" android:strokeWidth="2" android:fillColor="@android:color/transparent"/>
+
+</vector>

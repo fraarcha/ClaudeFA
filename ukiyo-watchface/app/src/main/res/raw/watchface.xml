@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  UKIYO Watch Face — Japanese Digital
+  ═══════════════════════════════════════════════════════════════════
+  Design: Glassmorphism colour blobs + Hokusai wave arcs + cherry
+  blossom dots + kanji time labels (時/分) + split digital layout.
+  Hours upper-left, minutes lower-right — like reading a haiku.
+
+  Canvas: 450×450 (CIRCLE clip, r=225)
+  WFF version: 1
+  Themes: EDO (vermillion+indigo) / SAKURA (rose+plum) /
+          ZEN (pine+ivory) / KAMO (teal+amber)
+  ═══════════════════════════════════════════════════════════════════
+-->
+<WatchFace width="450" height="450"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- ══════════════════════════════════════════════════════════
+         COLOUR THEMES — 6 slots (AARRGGBB):
+           .0  primary neon      (hour digits, main accent)
+           .1  secondary         (minute digits)
+           .2  gold              (kanji labels 時/分, date)
+           .3  background tint   (deep dark, used for blob blends)
+           .4  battery arc fill
+           .5  cherry blossom    (sakura dots)
+         ══════════════════════════════════════════════════════════ -->
+    <UserConfigurations>
+        <ColorConfiguration id="theme" displayName="@string/config_theme_label"
+            screenReaderText="@string/config_theme_label" icon="@android:color/transparent">
+
+            <!-- EDO: Vermillion + Indigo -->
+            <ColorOption id="0" displayName="@string/theme_edo"
+                colors="#FFF5EDD6 #FFF5EDD6 #FFC89010 #FF050810 #FFC89010 #FFE87896"/>
+
+            <!-- SAKURA: Rose + Plum -->
+            <ColorOption id="1" displayName="@string/theme_sakura"
+                colors="#FFFFE0EC #FFFFE0EC #FFDDAACC #FF0A0610 #FFDDAACC #FFFFB7C5"/>
+
+            <!-- ZEN: Pine + Ivory -->
+            <ColorOption id="2" displayName="@string/theme_zen"
+                colors="#FFF5F0E8 #FFF5F0E8 #FF88AA77 #FF060A06 #FF88AA77 #FFDDCCBB"/>
+
+            <!-- KAMO: Teal + Amber -->
+            <ColorOption id="3" displayName="@string/theme_kamo"
+                colors="#FFF8F0E0 #FFF8F0E0 #FF4AABAB #FF060A0A #FFDD8822 #FFAADDCC"/>
+        </ColorConfiguration>
+    </UserConfigurations>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SCENE
+         ══════════════════════════════════════════════════════════ -->
+    <Scene backgroundColor="#FF050810">
+
+        <!-- ── 1. COLOUR BLOBS — depth / atmosphere ───────────────── -->
+        <!-- Primary blob: lower-right (vermillion / rose / pine / amber) -->
+        <PartDraw x="25" y="25" width="400" height="400" alpha="255">
+            <Ellipse x="200" y="200" width="400" height="400" fillColor="#11D42B1E"/>
+        </PartDraw>
+        <PartDraw x="65" y="100" width="320" height="280" alpha="255">
+            <Ellipse x="160" y="140" width="320" height="280" fillColor="#1ED42B1E"/>
+        </PartDraw>
+        <PartDraw x="105" y="150" width="240" height="210" alpha="255">
+            <Ellipse x="120" y="105" width="240" height="210" fillColor="#2AD42B1E"/>
+        </PartDraw>
+
+        <!-- Secondary blob: upper-left (indigo / plum / ivory / teal) -->
+        <PartDraw x="0" y="0" width="230" height="230" alpha="255">
+            <Ellipse x="60" y="60" width="230" height="230" fillColor="#0D1A2A7A"/>
+        </PartDraw>
+        <PartDraw x="0" y="0" width="185" height="185" alpha="255">
+            <Ellipse x="50" y="50" width="185" height="185" fillColor="#181A2A7A"/>
+        </PartDraw>
+        <PartDraw x="0" y="0" width="140" height="140" alpha="255">
+            <Ellipse x="40" y="40" width="140" height="140" fillColor="#241A2A7A"/>
+        </PartDraw>
+
+        <!-- Accent blob: upper-right (gold highlight) -->
+        <PartDraw x="220" y="0" width="230" height="180" alpha="255">
+            <Ellipse x="115" y="70" width="230" height="180" fillColor="#08C89010"/>
+        </PartDraw>
+        <PartDraw x="258" y="12" width="170" height="140" alpha="255">
+            <Ellipse x="85" y="58" width="170" height="140" fillColor="#14C89010"/>
+        </PartDraw>
+
+        <!-- ── 2. WAVE ARCS — Hokusai-inspired lower sweep ────────── -->
+        <!-- 5 concentric arcs, lower half of face -->
+        <PartDraw x="18" y="18" width="414" height="414" alpha="255">
+            <Arc x="207" y="207" width="414" height="414"
+                startAngle="140" sweepAngle="80" fillColor="#00000000">
+                <Stroke color="#22D42B1E" width="2.5"/>
+            </Arc>
+        </PartDraw>
+        <PartDraw x="36" y="36" width="378" height="378" alpha="255">
+            <Arc x="189" y="189" width="378" height="378"
+                startAngle="138" sweepAngle="84" fillColor="#00000000">
+                <Stroke color="#1CD42B1E" width="2"/>
+            </Arc>
+        </PartDraw>
+        <PartDraw x="56" y="56" width="338" height="338" alpha="255">
+            <Arc x="169" y="169" width="338" height="338"
+                startAngle="136" sweepAngle="88" fillColor="#00000000">
+                <Stroke color="#16D42B1E" width="2"/>
+            </Arc>
+        </PartDraw>
+        <PartDraw x="78" y="78" width="294" height="294" alpha="255">
+            <Arc x="147" y="147" width="294" height="294"
+                startAngle="134" sweepAngle="92" fillColor="#00000000">
+                <Stroke color="#10D42B1E" width="1.5"/>
+            </Arc>
+        </PartDraw>
+        <PartDraw x="100" y="100" width="250" height="250" alpha="255">
+            <Arc x="125" y="125" width="250" height="250"
+                startAngle="132" sweepAngle="96" fillColor="#00000000">
+                <Stroke color="#0CD42B1E" width="1.5"/>
+            </Arc>
+        </PartDraw>
+
+        <!-- ── 3. CHERRY BLOSSOM DOTS ──────────────────────────────── -->
+        <!-- Scattered sakura dots, various sizes, sakura pink -->
+        <PartDraw x="64" y="68" width="8" height="8" alpha="255">
+            <Ellipse x="4" y="4" width="8" height="8" fillColor="#50E87896"/>
+        </PartDraw>
+        <PartDraw x="71" y="58" width="5" height="5" alpha="255">
+            <Ellipse x="2.5" y="2.5" width="5" height="5" fillColor="#40E87896"/>
+        </PartDraw>
+        <PartDraw x="376" y="84" width="7" height="7" alpha="255">
+            <Ellipse x="3.5" y="3.5" width="7" height="7" fillColor="#45E87896"/>
+        </PartDraw>
+        <PartDraw x="390" y="68" width="4" height="4" alpha="255">
+            <Ellipse x="2" y="2" width="4" height="4" fillColor="#38E87896"/>
+        </PartDraw>
+        <PartDraw x="45" y="161" width="6" height="6" alpha="255">
+            <Ellipse x="3" y="3" width="6" height="6" fillColor="#42E87896"/>
+        </PartDraw>
+        <PartDraw x="389" y="171" width="5" height="5" alpha="255">
+            <Ellipse x="2.5" y="2.5" width="5" height="5" fillColor="#38E87896"/>
+        </PartDraw>
+        <PartDraw x="52" y="366" width="6" height="6" alpha="255">
+            <Ellipse x="3" y="3" width="6" height="6" fillColor="#40E87896"/>
+        </PartDraw>
+        <PartDraw x="388" y="291" width="4" height="4" alpha="255">
+            <Ellipse x="2" y="2" width="4" height="4" fillColor="#35E87896"/>
+        </PartDraw>
+        <PartDraw x="152" y="38" width="5" height="5" alpha="255">
+            <Ellipse x="2.5" y="2.5" width="5" height="5" fillColor="#42E87896"/>
+        </PartDraw>
+        <PartDraw x="307" y="34" width="4" height="4" alpha="255">
+            <Ellipse x="2" y="2" width="4" height="4" fillColor="#30E87896"/>
+        </PartDraw>
+
+        <!-- ── 4. BATTERY ARC — left edge ──────────────────────────── -->
+        <!-- Track arc: left side, center (225,225), r=215, 210°→330° (120°) -->
+        <PartDraw x="8" y="8" width="434" height="434" alpha="255">
+            <Arc x="217" y="217" width="434" height="434"
+                startAngle="210" sweepAngle="120" fillColor="#00000000">
+                <Stroke color="#15FFFFFF" width="4"/>
+            </Arc>
+        </PartDraw>
+        <!-- Fill arc: battery percent drives sweep (120° * percent/100) -->
+        <!-- sweepAngle = BATTERY_PERCENT_INT * 1.2 -->
+        <PartDraw x="8" y="8" width="434" height="434" alpha="255">
+            <Arc x="217" y="217" width="434" height="434"
+                startAngle="210"
+                sweepAngle="[BATTERY_PERCENT_INT] * 1.2"
+                fillColor="#00000000">
+                <Stroke color="[CONFIGURATION.theme.4]" width="4"/>
+            </Arc>
+        </PartDraw>
+
+        <!-- ── 5. THIN DIVIDER — between hour & minute zones ─────── -->
+        <PartDraw x="38" y="204" width="130" height="1" alpha="255">
+            <Rectangle x="0" y="0" width="130" height="1" fillColor="#20FFFFFF"/>
+        </PartDraw>
+
+        <!-- ── 6. HOURS — large, upper-left ───────────────────────── -->
+        <PartText x="28" y="68" width="188" height="132" alpha="255">
+            <Font family="GOTHIC" size="92" weight="BOLD" slant="NORMAL"
+                color="[CONFIGURATION.theme.0]"/>
+            <Template>%02d
+                <Parameter expression="[HOUR_0_23]"/>
+            </Template>
+        </PartText>
+
+        <!-- 時 kanji label (hours) — gold, next to hour digits -->
+        <PartText x="170" y="148" width="52" height="28" alpha="255">
+            <Font family="DEFAULT" size="22" weight="BOLD" slant="NORMAL"
+                color="[CONFIGURATION.theme.2]"/>
+            <Template>時</Template>
+        </PartText>
+
+        <!-- ── 7. MINUTES — large, lower-right ────────────────────── -->
+        <PartText x="230" y="220" width="188" height="132" alpha="255">
+            <Font family="GOTHIC" size="92" weight="BOLD" slant="NORMAL"
+                color="[CONFIGURATION.theme.1]"/>
+            <Template>%02d
+                <Parameter expression="[MINUTE]"/>
+            </Template>
+        </PartText>
+
+        <!-- 分 kanji label (minutes) — gold, next to minute digits -->
+        <PartText x="230" y="298" width="52" height="28" alpha="255">
+            <Font family="DEFAULT" size="22" weight="BOLD" slant="NORMAL"
+                color="[CONFIGURATION.theme.2]"/>
+            <Template>分</Template>
+        </PartText>
+
+        <!-- ── 8. SECONDS — small, to the right of minutes ─────────── -->
+        <PartText x="352" y="340" width="56" height="22" alpha="255">
+            <Font family="GOTHIC" size="16" weight="NORMAL" slant="NORMAL"
+                color="#77FFFFFF"/>
+            <Template>:%02d
+                <Parameter expression="[SECOND]"/>
+            </Template>
+        </PartText>
+
+        <!-- ── 9. DATE — lower-left ───────────────────────────────── -->
+        <!-- Day of week -->
+        <PartText x="28" y="355" width="120" height="18" alpha="255">
+            <Font family="GOTHIC" size="13" weight="BOLD" slant="NORMAL"
+                color="[CONFIGURATION.theme.2]"/>
+            <Template>[DAY_OF_WEEK_S]</Template>
+        </PartText>
+        <!-- Day number -->
+        <PartText x="28" y="375" width="80" height="28" alpha="255">
+            <Font family="GOTHIC" size="26" weight="BOLD" slant="NORMAL"
+                color="[CONFIGURATION.theme.0]"/>
+            <Template>%02d
+                <Parameter expression="[DAY]"/>
+            </Template>
+        </PartText>
+        <!-- Month -->
+        <PartText x="74" y="375" width="80" height="28" alpha="255">
+            <Font family="GOTHIC" size="26" weight="NORMAL" slant="NORMAL"
+                color="#66FFFFFF"/>
+            <Template>[MONTH_S]</Template>
+        </PartText>
+
+        <!-- ── 10. COMPLICATION — STEPS (bottom center) ──────────── -->
+        <ComplicationSlot slotId="1"
+            supportedTypes="SHORT_TEXT RANGED_VALUE"
+            x="148" y="348" width="160" height="36">
+            <DefaultProviderPolicy
+                defaultSystemProvider="STEP_COUNT"
+                defaultSystemProviderType="SHORT_TEXT"
+                primaryDataSourcesDefaultType="SHORT_TEXT"/>
+            <BoundingRectangle x="148" y="348" width="160" height="36"/>
+
+            <Complication type="SHORT_TEXT">
+                <!-- Pill background -->
+                <PartDraw x="0" y="0" width="160" height="36" alpha="255">
+                    <RoundRectangle x="0" y="0" width="160" height="36"
+                        cornerRadius="18" fillColor="#18FFFFFF"/>
+                </PartDraw>
+                <!-- Step value -->
+                <PartText x="20" y="6" width="120" height="24" alpha="255">
+                    <Font family="GOTHIC" size="15" weight="BOLD" slant="NORMAL"
+                        color="[CONFIGURATION.theme.0]"/>
+                    <Template>[COMPLICATION.TEXT]</Template>
+                </PartText>
+                <!-- Label -->
+                <PartText x="100" y="12" width="52" height="16" alpha="255">
+                    <Font family="GOTHIC" size="10" weight="NORMAL" slant="NORMAL"
+                        color="[CONFIGURATION.theme.2]"/>
+                    <Template>歩</Template>
+                </PartText>
+            </Complication>
+
+            <Complication type="RANGED_VALUE">
+                <PartDraw x="0" y="0" width="160" height="36" alpha="255">
+                    <RoundRectangle x="0" y="0" width="160" height="36"
+                        cornerRadius="18" fillColor="#18FFFFFF"/>
+                </PartDraw>
+                <PartText x="20" y="6" width="120" height="24" alpha="255">
+                    <Font family="GOTHIC" size="15" weight="BOLD" slant="NORMAL"
+                        color="[CONFIGURATION.theme.0]"/>
+                    <Template>%d
+                        <Parameter expression="[COMPLICATION.VALUE]"/>
+                    </Template>
+                </PartText>
+                <PartText x="100" y="12" width="52" height="16" alpha="255">
+                    <Font family="GOTHIC" size="10" weight="NORMAL" slant="NORMAL"
+                        color="[CONFIGURATION.theme.2]"/>
+                    <Template>歩</Template>
+                </PartText>
+            </Complication>
+        </ComplicationSlot>
+
+        <!-- ── 11. COMPLICATION — HEART RATE (right) ─────────────── -->
+        <ComplicationSlot slotId="2"
+            supportedTypes="SHORT_TEXT RANGED_VALUE"
+            x="304" y="276" width="120" height="36">
+            <DefaultProviderPolicy
+                defaultSystemProvider="HEART_RATE"
+                defaultSystemProviderType="SHORT_TEXT"
+                primaryDataSourcesDefaultType="SHORT_TEXT"/>
+            <BoundingRectangle x="304" y="276" width="120" height="36"/>
+
+            <Complication type="SHORT_TEXT">
+                <PartDraw x="0" y="0" width="120" height="36" alpha="255">
+                    <RoundRectangle x="0" y="0" width="120" height="36"
+                        cornerRadius="18" fillColor="#18FFFFFF"/>
+                </PartDraw>
+                <PartText x="10" y="6" width="100" height="24" alpha="255">
+                    <Font family="GOTHIC" size="15" weight="BOLD" slant="NORMAL"
+                        color="[CONFIGURATION.theme.0]"/>
+                    <Template>[COMPLICATION.TEXT]</Template>
+                </PartText>
+                <PartText x="88" y="12" width="28" height="16" alpha="255">
+                    <Font family="GOTHIC" size="10" weight="NORMAL" slant="NORMAL"
+                        color="[CONFIGURATION.theme.2]"/>
+                    <Template>♡</Template>
+                </PartText>
+            </Complication>
+
+            <Complication type="RANGED_VALUE">
+                <PartDraw x="0" y="0" width="120" height="36" alpha="255">
+                    <RoundRectangle x="0" y="0" width="120" height="36"
+                        cornerRadius="18" fillColor="#18FFFFFF"/>
+                </PartDraw>
+                <PartText x="10" y="6" width="100" height="24" alpha="255">
+                    <Font family="GOTHIC" size="15" weight="BOLD" slant="NORMAL"
+                        color="[CONFIGURATION.theme.0]"/>
+                    <Template>%d
+                        <Parameter expression="[COMPLICATION.VALUE]"/>
+                    </Template>
+                </PartText>
+                <PartText x="88" y="12" width="28" height="16" alpha="255">
+                    <Font family="GOTHIC" size="10" weight="NORMAL" slant="NORMAL"
+                        color="[CONFIGURATION.theme.2]"/>
+                    <Template>♡</Template>
+                </PartText>
+            </Complication>
+        </ComplicationSlot>
+
+        <!-- ── 12. OUTER GLOW RING ─────────────────────────────────── -->
+        <PartDraw x="8" y="8" width="434" height="434" alpha="255">
+            <Ellipse x="217" y="217" width="434" height="434"
+                fillColor="#00000000">
+                <Stroke color="#1AD42B1E" width="2"/>
+            </Ellipse>
+        </PartDraw>
+
+    </Scene>
+
+</WatchFace>

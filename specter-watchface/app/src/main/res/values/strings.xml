@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="watch_face_name">SPECTER Watch Face</string>
+
+    <string name="config_neon_label">Neon Style</string>
+
+    <!-- Theme names — cyberpunk codenames -->
+    <string name="neon_cyber_cyan">CYBER — Cyan &amp; Teal</string>
+    <string name="neon_red">GHOST — Crimson &amp; Ember</string>
+    <string name="neon_matrix">MATRIX — Acid Green</string>
+    <string name="neon_synth">SYNTH — Violet &amp; Magenta</string>
+</resources>

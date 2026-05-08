@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  SPECTER Watch Face — 4-Theme Render Board
+  1060 × 600  (four 220×220 watch panels + labels + feature callouts)
+  Themes left→right: CYBER CYAN / GHOST CRIMSON / MATRIX GREEN / SYNTH VIOLET
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="640"
+     viewBox="0 0 1060 640" style="background:#05050A">
+
+  <defs>
+    <!-- Neon glow filter -->
+    <filter id="glow-cyan" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="glow-red" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="glow-green" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="glow-synth" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <clipPath id="circle1"><circle cx="155" cy="320" r="108"/></clipPath>
+    <clipPath id="circle2"><circle cx="395" cy="320" r="108"/></clipPath>
+    <clipPath id="circle3"><circle cx="635" cy="320" r="108"/></clipPath>
+    <clipPath id="circle4"><circle cx="875" cy="320" r="108"/></clipPath>
+  </defs>
+
+  <!-- ══ HEADER ══════════════════════════════════════════════════════ -->
+  <text x="530" y="44" text-anchor="middle" font-family="monospace"
+    font-size="28" font-weight="bold" fill="#00E5FF" letter-spacing="6"
+    filter="url(#glow-cyan)">S P E C T E R</text>
+  <text x="530" y="68" text-anchor="middle" font-family="monospace"
+    font-size="13" fill="#44AAAAAA" letter-spacing="3">CYBERNETIC NOIR — WEAR OS WATCH FACE</text>
+  <!-- Divider -->
+  <line x1="80" y1="80" x2="980" y2="80" stroke="#1800E5FF" stroke-width="1"/>
+
+  <!-- ══ HELPER MACRO: draws a single watch face panel ══════════════
+       Each face at cx,cy r=108. We draw all 4 with their colours.      -->
+
+  <!-- ─────────────── PANEL 1: CYBER CYAN (cx=155,cy=320) ─────────── -->
+  <g clip-path="url(#circle1)">
+    <!-- bg -->
+    <circle cx="155" cy="320" r="108" fill="#000000"/>
+    <!-- scan lines -->
+    <rect x="47" y="230" width="216" height="2" fill="#0CFFFFFF"/>
+    <rect x="47" y="245" width="216" height="2" fill="#0AFFFFFF"/>
+    <rect x="47" y="260" width="216" height="2" fill="#0CFFFFFF"/>
+    <rect x="47" y="275" width="216" height="2" fill="#08FFFFFF"/>
+    <rect x="47" y="290" width="216" height="2" fill="#0CFFFFFF"/>
+    <rect x="47" y="305" width="216" height="2" fill="#08FFFFFF"/>
+    <rect x="47" y="320" width="216" height="2" fill="#0CFFFFFF"/>
+    <rect x="47" y="335" width="216" height="2" fill="#08FFFFFF"/>
+    <rect x="47" y="350" width="216" height="2" fill="#0CFFFFFF"/>
+    <rect x="47" y="365" width="216" height="2" fill="#08FFFFFF"/>
+    <rect x="47" y="380" width="216" height="2" fill="#0CFFFFFF"/>
+    <rect x="47" y="395" width="216" height="2" fill="#08FFFFFF"/>
+    <!-- city -->
+    <rect x="60"  y="365" width="14" height="63" fill="#0D0D1A"/>
+    <rect x="76"  y="352" width="20" height="76" fill="#0D0D1A"/>
+    <rect x="98"  y="370" width="28" height="58" fill="#0D0D1A"/>
+    <rect x="128" y="345" width="14" height="83" fill="#0D0D1A"/>
+    <rect x="144" y="358" width="22" height="70" fill="#0D0D1A"/>
+    <rect x="168" y="340" width="15" height="88" fill="#0D0D1A"/>
+    <rect x="185" y="362" width="25" height="66" fill="#0D0D1A"/>
+    <rect x="212" y="348" width="12" height="80" fill="#0D0D1A"/>
+    <rect x="226" y="368" width="18" height="60" fill="#0D0D1A"/>
+    <!-- window lights -->
+    <rect x="82"  y="358" width="4" height="3" fill="#2200E5FF"/>
+    <rect x="174" y="348" width="4" height="3" fill="#1E00E5FF"/>
+    <rect x="218" y="354" width="4" height="3" fill="#2200E5FF"/>
+    <!-- figure hood -->
+    <ellipse cx="155" cy="270" rx="34" ry="28" fill="#1C1C2A"/>
+    <!-- cloak -->
+    <ellipse cx="155" cy="307" rx="56" ry="38" fill="#16161E"/>
+    <!-- cloak lower -->
+    <ellipse cx="155" cy="330" rx="64" ry="25" fill="#12121A"/>
+    <!-- chest glow -->
+    <circle cx="155" cy="310" r="8" fill="#3300E5FF"/>
+    <circle cx="155" cy="310" r="4" fill="#FF00E5FF" filter="url(#glow-cyan)"/>
+    <!-- HUD brackets -->
+    <rect x="62"  y="232" width="20" height="2" fill="#00E5FF"/>
+    <rect x="62"  y="232" width="2"  height="20" fill="#00E5FF"/>
+    <rect x="226" y="232" width="20" height="2" fill="#00E5FF"/>
+    <rect x="244" y="232" width="2"  height="20" fill="#00E5FF"/>
+    <rect x="62"  y="406" width="2"  height="20" fill="#00E5FF"/>
+    <rect x="62"  y="424" width="20" height="2"  fill="#00E5FF"/>
+    <rect x="244" y="406" width="2"  height="20" fill="#00E5FF"/>
+    <rect x="226" y="424" width="20" height="2"  fill="#00E5FF"/>
+    <!-- time display "09:15" -->
+    <text x="155" y="306" text-anchor="middle" font-family="monospace"
+      font-size="44" font-weight="bold" fill="#00E5FF" filter="url(#glow-cyan)">09:15</text>
+    <!-- date -->
+    <text x="155" y="246" text-anchor="middle" font-family="monospace"
+      font-size="7" fill="#00B8CC">VEN 27 MAI</text>
+    <!-- dividers -->
+    <line x1="70" y1="250" x2="240" y2="250" stroke="#00B8CC" stroke-width="0.5" opacity="0.6"/>
+    <line x1="70" y1="316" x2="240" y2="316" stroke="#00B8CC" stroke-width="0.5" opacity="0.6"/>
+    <!-- complication pills -->
+    <rect x="68"  y="322" width="72" height="28" rx="2" fill="#0A040C14" stroke="#00B8CC" stroke-width="0.5"/>
+    <text x="72"  y="330" font-family="monospace" font-size="5" fill="#00B8CC">STEPS</text>
+    <text x="72"  y="343" font-family="monospace" font-size="11" font-weight="bold" fill="#00E5FF">8,420</text>
+    <rect x="146" y="322" width="72" height="28" rx="2" fill="#0A040C14" stroke="#00B8CC" stroke-width="0.5"/>
+    <text x="150" y="330" font-family="monospace" font-size="5" fill="#00B8CC">HP [BPM]</text>
+    <text x="150" y="343" font-family="monospace" font-size="11" font-weight="bold" fill="#00E5FF">72</text>
+    <!-- battery bar -->
+    <rect x="246" y="248" width="7" height="108" rx="3" fill="#15FFFFFF"/>
+    <rect x="247" y="283" width="5" height="73" fill="#00FFCC"/>
+    <line x1="244" y1="264" x2="254" y2="264" stroke="#66FFFFFF" stroke-width="1"/>
+    <line x1="243" y1="302" x2="255" y2="302" stroke="#88FFFFFF" stroke-width="1"/>
+    <line x1="244" y1="340" x2="254" y2="340" stroke="#66FFFFFF" stroke-width="1"/>
+    <!-- outer ring -->
+    <circle cx="155" cy="320" r="106" fill="none" stroke="#1800E5FF" stroke-width="1.5"/>
+  </g>
+  <!-- circle border -->
+  <circle cx="155" cy="320" r="108" fill="none" stroke="#00E5FF" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- ─────────────── PANEL 2: GHOST CRIMSON (cx=395,cy=320) ────────── -->
+  <g clip-path="url(#circle2)">
+    <circle cx="395" cy="320" r="108" fill="#000000"/>
+    <!-- scan lines -->
+    <rect x="287" y="230" width="216" height="2" fill="#0CFFFFFF"/>
+    <rect x="287" y="248" width="216" height="2" fill="#0AFFFFFF"/>
+    <rect x="287" y="266" width="216" height="2" fill="#0CFFFFFF"/>
+    <rect x="287" y="284" width="216" height="2" fill="#08FFFFFF"/>
+    <rect x="287" y="302" width="216" height="2" fill="#0CFFFFFF"/>
+    <rect x="287" y="320" width="216" height="2" fill="#08FFFFFF"/>
+    <rect x="287" y="338" width="216" height="2" fill="#0CFFFFFF"/>
+    <rect x="287" y="356" width="216" height="2" fill="#08FFFFFF"/>
+    <rect x="287" y="374" width="216" height="2" fill="#0CFFFFFF"/>
+    <rect x="287" y="392" width="216" height="2" fill="#08FFFFFF"/>
+    <rect x="287" y="410" width="216" height="2" fill="#0CFFFFFF"/>
+    <!-- city -->
+    <rect x="300" y="365" width="14" height="63" fill="#0D0D1A"/>
+    <rect x="316" y="352" width="20" height="76" fill="#0D0D1A"/>
+    <rect x="338" y="370" width="28" height="58" fill="#0D0D1A"/>
+    <rect x="368" y="345" width="14" height="83" fill="#0D0D1A"/>
+    <rect x="384" y="358" width="22" height="70" fill="#0D0D1A"/>
+    <rect x="408" y="340" width="15" height="88" fill="#0D0D1A"/>
+    <rect x="425" y="362" width="25" height="66" fill="#0D0D1A"/>
+    <rect x="452" y="348" width="12" height="80" fill="#0D0D1A"/>
+    <rect x="466" y="368" width="18" height="60" fill="#0D0D1A"/>
+    <!-- figure -->
+    <ellipse cx="395" cy="270" rx="34" ry="28" fill="#1C1C2A"/>
+    <ellipse cx="395" cy="307" rx="56" ry="38" fill="#16161E"/>
+    <ellipse cx="395" cy="330" rx="64" ry="25" fill="#12121A"/>
+    <circle cx="395" cy="310" r="8" fill="#33FF1122"/>
+    <circle cx="395" cy="310" r="4" fill="#FFFF4455" filter="url(#glow-red)"/>
+    <!-- HUD brackets — crimson -->
+    <rect x="302" y="232" width="20" height="2" fill="#FF4455"/>
+    <rect x="302" y="232" width="2"  height="20" fill="#FF4455"/>
+    <rect x="466" y="232" width="20" height="2" fill="#FF4455"/>
+    <rect x="484" y="232" width="2"  height="20" fill="#FF4455"/>
+    <rect x="302" y="406" width="2"  height="20" fill="#FF4455"/>
+    <rect x="302" y="424" width="20" height="2"  fill="#FF4455"/>
+    <rect x="484" y="406" width="2"  height="20" fill="#FF4455"/>
+    <rect x="466" y="424" width="20" height="2"  fill="#FF4455"/>
+    <!-- time -->
+    <text x="395" y="306" text-anchor="middle" font-family="monospace"
+      font-size="44" font-weight="bold" fill="#FF4455" filter="url(#glow-red)">09:15</text>
+    <text x="395" y="246" text-anchor="middle" font-family="monospace"
+      font-size="7" fill="#CC2233">VEN 27 MAI</text>
+    <line x1="310" y1="250" x2="480" y2="250" stroke="#CC2233" stroke-width="0.5" opacity="0.6"/>
+    <line x1="310" y1="316" x2="480" y2="316" stroke="#CC2233" stroke-width="0.5" opacity="0.6"/>
+    <!-- comps -->
+    <rect x="308" y="322" width="72" height="28" rx="2" fill="#0A14040A" stroke="#CC2233" stroke-width="0.5"/>
+    <text x="312" y="330" font-family="monospace" font-size="5" fill="#CC2233">STEPS</text>
+    <text x="312" y="343" font-family="monospace" font-size="11" font-weight="bold" fill="#FF4455">8,420</text>
+    <rect x="386" y="322" width="72" height="28" rx="2" fill="#0A14040A" stroke="#CC2233" stroke-width="0.5"/>
+    <text x="390" y="330" font-family="monospace" font-size="5" fill="#CC2233">HP [BPM]</text>
+    <text x="390" y="343" font-family="monospace" font-size="11" font-weight="bold" fill="#FF4455">72</text>
+    <!-- battery — orange fill -->
+    <rect x="486" y="248" width="7" height="108" rx="3" fill="#15FFFFFF"/>
+    <rect x="487" y="283" width="5" height="73" fill="#FF6600"/>
+    <line x1="484" y1="264" x2="494" y2="264" stroke="#66FFFFFF" stroke-width="1"/>
+    <line x1="483" y1="302" x2="495" y2="302" stroke="#88FFFFFF" stroke-width="1"/>
+    <line x1="484" y1="340" x2="494" y2="340" stroke="#66FFFFFF" stroke-width="1"/>
+    <circle cx="395" cy="320" r="106" fill="none" stroke="#1AFF4455" stroke-width="1.5"/>
+  </g>
+  <circle cx="395" cy="320" r="108" fill="none" stroke="#FF4455" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- ─────────────── PANEL 3: MATRIX GREEN (cx=635,cy=320) ─────────── -->
+  <g clip-path="url(#circle3)">
+    <circle cx="635" cy="320" r="108" fill="#000000"/>
+    <rect x="527" y="235" width="216" height="2" fill="#0CFF00FF"/>
+    <rect x="527" y="253" width="216" height="2" fill="#08FF00FF"/>
+    <rect x="527" y="271" width="216" height="2" fill="#0CFF00FF"/>
+    <rect x="527" y="289" width="216" height="2" fill="#06FF00FF"/>
+    <rect x="527" y="307" width="216" height="2" fill="#0CFF00FF"/>
+    <rect x="527" y="325" width="216" height="2" fill="#06FF00FF"/>
+    <rect x="527" y="343" width="216" height="2" fill="#0CFF00FF"/>
+    <rect x="527" y="361" width="216" height="2" fill="#06FF00FF"/>
+    <rect x="527" y="379" width="216" height="2" fill="#0CFF00FF"/>
+    <rect x="527" y="397" width="216" height="2" fill="#06FF00FF"/>
+    <!-- city -->
+    <rect x="540" y="365" width="14" height="63" fill="#040F04"/>
+    <rect x="556" y="352" width="20" height="76" fill="#040F04"/>
+    <rect x="578" y="370" width="28" height="58" fill="#040F04"/>
+    <rect x="608" y="345" width="14" height="83" fill="#040F04"/>
+    <rect x="624" y="358" width="22" height="70" fill="#040F04"/>
+    <rect x="648" y="340" width="15" height="88" fill="#040F04"/>
+    <rect x="665" y="362" width="25" height="66" fill="#040F04"/>
+    <rect x="692" y="348" width="12" height="80" fill="#040F04"/>
+    <rect x="706" y="368" width="18" height="60" fill="#040F04"/>
+    <!-- window lights (green tinted) -->
+    <rect x="562" y="358" width="4" height="3" fill="#2200FF44"/>
+    <rect x="654" y="348" width="4" height="3" fill="#1E00FF44"/>
+    <!-- figure -->
+    <ellipse cx="635" cy="270" rx="34" ry="28" fill="#1C1C2A"/>
+    <ellipse cx="635" cy="307" rx="56" ry="38" fill="#16161E"/>
+    <ellipse cx="635" cy="330" rx="64" ry="25" fill="#12121A"/>
+    <circle cx="635" cy="310" r="8" fill="#3300FF44"/>
+    <circle cx="635" cy="310" r="4" fill="#FF00FF44" filter="url(#glow-green)"/>
+    <!-- brackets — acid green -->
+    <rect x="542" y="232" width="20" height="2" fill="#00FF44"/>
+    <rect x="542" y="232" width="2"  height="20" fill="#00FF44"/>
+    <rect x="706" y="232" width="20" height="2" fill="#00FF44"/>
+    <rect x="724" y="232" width="2"  height="20" fill="#00FF44"/>
+    <rect x="542" y="406" width="2"  height="20" fill="#00FF44"/>
+    <rect x="542" y="424" width="20" height="2"  fill="#00FF44"/>
+    <rect x="724" y="406" width="2"  height="20" fill="#00FF44"/>
+    <rect x="706" y="424" width="20" height="2"  fill="#00FF44"/>
+    <!-- time -->
+    <text x="635" y="306" text-anchor="middle" font-family="monospace"
+      font-size="44" font-weight="bold" fill="#00FF44" filter="url(#glow-green)">09:15</text>
+    <text x="635" y="246" text-anchor="middle" font-family="monospace"
+      font-size="7" fill="#00CC33">VEN 27 MAI</text>
+    <line x1="550" y1="250" x2="720" y2="250" stroke="#00CC33" stroke-width="0.5" opacity="0.6"/>
+    <line x1="550" y1="316" x2="720" y2="316" stroke="#00CC33" stroke-width="0.5" opacity="0.6"/>
+    <!-- comps -->
+    <rect x="548" y="322" width="72" height="28" rx="2" fill="#0A04100A" stroke="#00CC33" stroke-width="0.5"/>
+    <text x="552" y="330" font-family="monospace" font-size="5" fill="#00CC33">STEPS</text>
+    <text x="552" y="343" font-family="monospace" font-size="11" font-weight="bold" fill="#00FF44">8,420</text>
+    <rect x="626" y="322" width="72" height="28" rx="2" fill="#0A04100A" stroke="#00CC33" stroke-width="0.5"/>
+    <text x="630" y="330" font-family="monospace" font-size="5" fill="#00CC33">HP [BPM]</text>
+    <text x="630" y="343" font-family="monospace" font-size="11" font-weight="bold" fill="#00FF44">72</text>
+    <!-- battery — lime fill -->
+    <rect x="726" y="248" width="7" height="108" rx="3" fill="#15FFFFFF"/>
+    <rect x="727" y="283" width="5" height="73" fill="#99FF00"/>
+    <line x1="724" y1="264" x2="734" y2="264" stroke="#66FFFFFF" stroke-width="1"/>
+    <line x1="723" y1="302" x2="735" y2="302" stroke="#88FFFFFF" stroke-width="1"/>
+    <line x1="724" y1="340" x2="734" y2="340" stroke="#66FFFFFF" stroke-width="1"/>
+    <circle cx="635" cy="320" r="106" fill="none" stroke="#1800FF44" stroke-width="1.5"/>
+  </g>
+  <circle cx="635" cy="320" r="108" fill="none" stroke="#00FF44" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- ─────────────── PANEL 4: SYNTH VIOLET (cx=875,cy=320) ─────────── -->
+  <g clip-path="url(#circle4)">
+    <circle cx="875" cy="320" r="108" fill="#000000"/>
+    <rect x="767" y="235" width="216" height="2" fill="#0CCC44FF"/>
+    <rect x="767" y="253" width="216" height="2" fill="#08CC44FF"/>
+    <rect x="767" y="271" width="216" height="2" fill="#0CCC44FF"/>
+    <rect x="767" y="289" width="216" height="2" fill="#06CC44FF"/>
+    <rect x="767" y="307" width="216" height="2" fill="#0CCC44FF"/>
+    <rect x="767" y="325" width="216" height="2" fill="#06CC44FF"/>
+    <rect x="767" y="343" width="216" height="2" fill="#0CCC44FF"/>
+    <rect x="767" y="361" width="216" height="2" fill="#06CC44FF"/>
+    <rect x="767" y="379" width="216" height="2" fill="#0CCC44FF"/>
+    <rect x="767" y="397" width="216" height="2" fill="#06CC44FF"/>
+    <!-- city -->
+    <rect x="780" y="365" width="14" height="63" fill="#0A0614"/>
+    <rect x="796" y="352" width="20" height="76" fill="#0A0614"/>
+    <rect x="818" y="370" width="28" height="58" fill="#0A0614"/>
+    <rect x="848" y="345" width="14" height="83" fill="#0A0614"/>
+    <rect x="864" y="358" width="22" height="70" fill="#0A0614"/>
+    <rect x="888" y="340" width="15" height="88" fill="#0A0614"/>
+    <rect x="905" y="362" width="25" height="66" fill="#0A0614"/>
+    <rect x="932" y="348" width="12" height="80" fill="#0A0614"/>
+    <rect x="946" y="368" width="18" height="60" fill="#0A0614"/>
+    <!-- window lights (violet tinted) -->
+    <rect x="802" y="358" width="4" height="3" fill="#22CC44FF"/>
+    <rect x="894" y="348" width="4" height="3" fill="#1ECC44FF"/>
+    <!-- figure -->
+    <ellipse cx="875" cy="270" rx="34" ry="28" fill="#1C1C2A"/>
+    <ellipse cx="875" cy="307" rx="56" ry="38" fill="#16161E"/>
+    <ellipse cx="875" cy="330" rx="64" ry="25" fill="#12121A"/>
+    <circle cx="875" cy="310" r="8" fill="#33CC44FF"/>
+    <circle cx="875" cy="310" r="4" fill="#FFCC44FF" filter="url(#glow-synth)"/>
+    <!-- brackets — violet -->
+    <rect x="782" y="232" width="20" height="2" fill="#CC44FF"/>
+    <rect x="782" y="232" width="2"  height="20" fill="#CC44FF"/>
+    <rect x="946" y="232" width="20" height="2" fill="#CC44FF"/>
+    <rect x="964" y="232" width="2"  height="20" fill="#CC44FF"/>
+    <rect x="782" y="406" width="2"  height="20" fill="#CC44FF"/>
+    <rect x="782" y="424" width="20" height="2"  fill="#CC44FF"/>
+    <rect x="964" y="406" width="2"  height="20" fill="#CC44FF"/>
+    <rect x="946" y="424" width="20" height="2"  fill="#CC44FF"/>
+    <!-- time -->
+    <text x="875" y="306" text-anchor="middle" font-family="monospace"
+      font-size="44" font-weight="bold" fill="#CC44FF" filter="url(#glow-synth)">09:15</text>
+    <text x="875" y="246" text-anchor="middle" font-family="monospace"
+      font-size="7" fill="#AA22CC">VEN 27 MAI</text>
+    <line x1="790" y1="250" x2="960" y2="250" stroke="#AA22CC" stroke-width="0.5" opacity="0.6"/>
+    <line x1="790" y1="316" x2="960" y2="316" stroke="#AA22CC" stroke-width="0.5" opacity="0.6"/>
+    <!-- comps -->
+    <rect x="788" y="322" width="72" height="28" rx="2" fill="#0A0A0614" stroke="#AA22CC" stroke-width="0.5"/>
+    <text x="792" y="330" font-family="monospace" font-size="5" fill="#AA22CC">STEPS</text>
+    <text x="792" y="343" font-family="monospace" font-size="11" font-weight="bold" fill="#CC44FF">8,420</text>
+    <rect x="866" y="322" width="72" height="28" rx="2" fill="#0A0A0614" stroke="#AA22CC" stroke-width="0.5"/>
+    <text x="870" y="330" font-family="monospace" font-size="5" fill="#AA22CC">HP [BPM]</text>
+    <text x="870" y="343" font-family="monospace" font-size="11" font-weight="bold" fill="#CC44FF">72</text>
+    <!-- battery — magenta fill -->
+    <rect x="966" y="248" width="7" height="108" rx="3" fill="#15FFFFFF"/>
+    <rect x="967" y="283" width="5" height="73" fill="#FF44CC"/>
+    <line x1="964" y1="264" x2="974" y2="264" stroke="#66FFFFFF" stroke-width="1"/>
+    <line x1="963" y1="302" x2="975" y2="302" stroke="#88FFFFFF" stroke-width="1"/>
+    <line x1="964" y1="340" x2="974" y2="340" stroke="#66FFFFFF" stroke-width="1"/>
+    <circle cx="875" cy="320" r="106" fill="none" stroke="#1ACC44FF" stroke-width="1.5"/>
+  </g>
+  <circle cx="875" cy="320" r="108" fill="none" stroke="#CC44FF" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- ══ THEME LABELS ═══════════════════════════════════════════════ -->
+  <text x="155" y="458" text-anchor="middle" font-family="monospace"
+    font-size="11" font-weight="bold" fill="#00E5FF" letter-spacing="2">CYBER CYAN</text>
+  <text x="395" y="458" text-anchor="middle" font-family="monospace"
+    font-size="11" font-weight="bold" fill="#FF4455" letter-spacing="2">GHOST CRIMSON</text>
+  <text x="635" y="458" text-anchor="middle" font-family="monospace"
+    font-size="11" font-weight="bold" fill="#00FF44" letter-spacing="2">MATRIX GREEN</text>
+  <text x="875" y="458" text-anchor="middle" font-family="monospace"
+    font-size="11" font-weight="bold" fill="#CC44FF" letter-spacing="2">SYNTH VIOLET</text>
+
+  <!-- ══ FEATURE CALLOUTS ═══════════════════════════════════════════ -->
+  <line x1="80" y1="475" x2="980" y2="475" stroke="#1800E5FF" stroke-width="1"/>
+  <text x="80"  y="500" font-family="monospace" font-size="10" fill="#44AAAAAA">
+    ◈ CYBERNETIC NOIR DESIGN  ◈ 4 NEON THEMES  ◈ SCAN-LINE TEXTURE
+  </text>
+  <text x="80"  y="520" font-family="monospace" font-size="10" fill="#44AAAAAA">
+    ◈ HOODED FIGURE SILHOUETTE  ◈ HUD CORNER BRACKETS  ◈ CITY SKYLINE
+  </text>
+  <text x="80"  y="540" font-family="monospace" font-size="10" fill="#44AAAAAA">
+    ◈ RPG BATTERY BAR (LIVE %)  ◈ STEPS + HEART RATE PANELS  ◈ WEAR OS 4+
+  </text>
+  <text x="80"  y="560" font-family="monospace" font-size="10" fill="#44AAAAAA">
+    ◈ SWAPPABLE COMPLICATION SLOTS  ◈ USER-CUSTOMISABLE THEMES
+  </text>
+  <!-- Bottom divider -->
+  <line x1="80" y1="572" x2="980" y2="572" stroke="#0800E5FF" stroke-width="1"/>
+  <text x="530" y="590" text-anchor="middle" font-family="monospace"
+    font-size="9" fill="#22555555">SPECTER • WEAR OS 4+ • API 33 • WATCH FACE FORMAT v1</text>
+  <text x="530" y="606" text-anchor="middle" font-family="monospace"
+    font-size="9" fill="#22555555">RECOMMENDED PRICE: $1.99</text>
+
+</svg>
